@@ -1,155 +1,155 @@
 # index.js
-Goat.newVersionDetected=⚠️ 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 %1 détectée. La version suprême est %2. Mets à jour ton prisme via la console avec la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 : %3
-Goat.autoRestart1=🔄 Le 𝐛𝐨𝐭 va s'évaporer et renaître dans %1
-Goat.autoRestart2=🔄 Réincarnation programmée du 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 via cron job : %1
-Goat.googleApiTokenExpired=❌ Le Refresh Token Google API a expiré ou a été révoqué. Renouvelle le pacte à l'adresse : https://developers.google.com/oauthplayground/
+Goat.newVersionDetected=⚠️ 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 %1 𝐝é𝐭𝐞𝐜𝐭é𝐞. 𝐋𝐚 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐬𝐮𝐩𝐫ê𝐦𝐞 𝐞𝐬𝐭 %2. 𝐌𝐞𝐭𝐬 𝐚̀ 𝐣𝐨𝐮𝐫 𝐭𝐨𝐧 𝐩𝐫𝐢𝐬𝐦𝐞 𝐯𝐢𝐚 𝐥𝐚 𝐜𝐨𝐧𝐬𝐨𝐥𝐞 𝐚𝐯𝐞𝐜 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 : %3
+Goat.autoRestart1=🔄 𝐋𝐞 𝐛𝐨𝐭 𝐯𝐚 𝐬'é𝐯𝐚𝐩𝐨𝐫𝐞𝐫 𝐞𝐭 𝐫𝐞𝐧𝐚î𝐭𝐫𝐞 𝐝𝐚𝐧𝐬 %1
+Goat.autoRestart2=🔄 𝐑é𝐢𝐧𝐜𝐚𝐫𝐧𝐚𝐭𝐢𝐨𝐧 𝐩𝐫𝐨𝐠𝐫𝐚𝐦𝐦é𝐞 𝐝𝐮 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 𝐯𝐢𝐚 𝐜𝐫𝐨𝐧 𝐣𝐨𝐛 : %1
+Goat.googleApiTokenExpired=❌ 𝐋𝐞 𝐑𝐞𝐟𝐫𝐞𝐬𝐡 𝐓𝐨𝐤𝐞𝐧 𝐆𝐨𝐨𝐠𝐥𝐞 𝐀𝐏𝐈 𝐚 𝐞𝐱𝐩𝐢𝐫é 𝐨𝐮 𝐚 é𝐭é 𝐫é𝐯𝐨𝐪𝐮é. 𝐑𝐞𝐧𝐨𝐮𝐯𝐞𝐥𝐥𝐞 𝐥𝐞 𝐩𝐚𝐜𝐭𝐞 𝐚̀ 𝐥'𝐚𝐝𝐫𝐞𝐬𝐬𝐞 : 𝐡𝐭𝐭𝐩𝐬://𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬.𝐠𝐨𝐨𝐠𝐥𝐞.𝐜𝐨𝐦/𝐨𝐚𝐮𝐭𝐡𝐩𝐥𝐚𝐲𝐠𝐫𝐨𝐮𝐧𝐝/
 
 # bot/login/login.js
-login.currentlyLogged=🔮 Infiltration des serveurs en cours...
-login.notFoundDirAccount=❌ Archive introuvable : %1
-login.loginToken=🔑 Authentification via Access Token en cours...
-login.loginCookieString=🍪 Authentification via Cookie String en cours...
-login.loginCookieNetscape=🍪 Authentification via Cookie Netscape en cours...
-login.loginCookieArray=🍪 Authentification via Cookie Array en cours...
-login.loginPassword=🔐 Tentative de connexion via les identifiants du fichier config.json...
-login.accountError=❌ Données de connexion erronées. Insère un Token valide (%1) ou un Cookie exploitable (%2 ou %3) dans le fichier %7.
-login.cannotFindAccount=❌ Aucun compte Facebook détecté. Choisis une méthode d'invocation (Saisis le nombre associé et valide avec Entrée) :
-login.chooseAccount=1. Connexion par Email et Mot de passe
-login.chooseToken=2. Connexion par Token d'accès total
-login.chooseCookieString=3. Connexion par Cookie (Format String)
-login.chooseCookieArray=4. Connexion par Cookie (Format Array)
-login.loginWith=⚡ Option sélectionnée : %1
-login.inputEmail=> Saisis l'identifiant (Email/Numéro) du compte Facebook :
-login.inputPassword=> Saisis le mot de passe du compte Facebook :
-login.input2FA=> Saisis le code de double authentification 2FA (Laisse vide si inexistant) :
-login.inputToken=> Saisis le Token d'accès total (Commençant par EAAAA) :
-login.inputCookieString=> Saisis le Cookie au format String :
-login.inputCookieArray=> Saisis le Cookie au format Array :
-login.refreshCookie=🔄 Régénération des cookies 𝐬𝐲𝐬𝐭𝐞𝐦𝐞...
-login.refreshCookieError=❌ Échec critique lors de la régénération des cookies.
-login.refreshCookieSuccess=✅ Cookies régénérés avec succès. Redémarre le 𝐛𝐨𝐭 pour sceller les modifications.
-login.refreshCookieWarning=⚠️ Mode régénération activé, mais les identifiants sont absents du fichier config.json.
-login.tokenError=❌ Token invalide ou expiré. Insère un Token valide (%1) dans le fichier %2.
-login.cookieError=❌ Les cookies fournis sont corrompus ou obsolètes.
-login.loginPasswordError=❌ Échec d'authentification par couple Email/Mot de passe.
-login.loginSuccess=👁️‍🗨️ Connexion établie. Le 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 est sous contrôle.
-login.loginError=❌ Une anomalie a bloqué la tentative de connexion.
-login.openDashboardSuccess=🚀 Le panneau de contrôle du 𝐛𝐨𝐭 a été déployé avec succès.
-login.openDashboardError=❌ Impossible de déployer le panneau de contrôle.
-login.changeGbanData=🚨 SÉCURITÉ : LES DONNÉES ONT ÉTÉ MODIFIÉES. VERROUILLAGE DU BOT.
-login.errorNoti=❌ Erreur lors de la récupération des notifications 𝐬𝐲𝐬𝐭𝐞𝐦𝐞.
-login.refreshFbstateSuccess=✅ Le fichier d'état %1 a été synchronisé.
-login.refreshFbstateError=❌ Impossible de synchroniser le fichier d'état %1.
-login.youAreBanned=💀 Tu as été banni définitivement du projet originel.
-login.runBot=👑 Invocation réussie. Madara écoute désormais les murmures des utilisateurs.
-login.notLoggedIn=❌ Authentification impossible. Vérifie les accès du compte Facebook.
-login.callBackError=❌ Erreur critique sur le callback listenMqtt.
-login.userBanned=❌ Tu es frappé par un bannissement global. Tu ne peux plus m'invoquer.
-login.checkGbanError=❌ Erreur lors de la vérification du registre des banni. Tente une mise à jour via : node update
-login.gbanMessage=💀 Bannissement global détecté le %1.\nRaison : %2\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3
-login.gbanMessageToDate=💀 Bannissement global détecté le %1.\nRaison : %2\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n⏳ Jusqu'au : %4
-login.gbanAdminMessage=🚨 L'intrus %1 a été banni du projet global le %2. Raison : %3
-login.openServerUptimeSuccess=🚀 Serveur Uptime déployé avec succès : %1
-login.openServerUptimeError=❌ Échec de déploiement du serveur Uptime.
-login.restartListenMessage=🔄 Redémarrage automatique de ListenMQTT configuré toutes les %1.
-login.stopRestartListenMessage=🔕 Redémarrage automatique de ListenMQTT désactivé.
-login.restartListenMessageError=❌ Erreur lors du redémarrage de ListenMQTT.
-login.restartListenMessage2=✅ ListenMQTT a été réinitialisé avec succès.
-login.refreshCookieAfter=🔄 Auto-rafraîchissement des cookies programmé toutes les %1.
-login.listenMqttClose=🔌 Connexion interrompue avec le serveur MQTT.
-login.listenMqttCloseByUser=🔌 Connexion avec le serveur MQTT coupée par l'administrateur.
-login.retryCheckLiveCookie=🔄 Analyse de la viabilité des cookies... %1
-login.startBotSuccess=👑 Invocation complétée. Prêt à recevoir les ordres des mortels.
+login.currentlyLogged=🔮 𝐈𝐧𝐟𝐢𝐥𝐭𝐫𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐬𝐞𝐫𝐯𝐞𝐮𝐫𝐬 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+login.notFoundDirAccount=❌ 𝐀𝐫𝐜𝐡𝐢𝐯𝐞 𝐢𝐧𝐭𝐫𝐨𝐮𝐯𝐚𝐛𝐥𝐞 : %1
+login.loginToken=🔑 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐯𝐢𝐚 𝐀𝐜𝐜𝐞𝐬𝐬 𝐓𝐨𝐤𝐞𝐧 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+login.loginCookieString=🍪 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐯𝐢𝐚 𝐂𝐨𝐨𝐤𝐢𝐞 𝐒𝐭𝐫𝐢𝐧𝐠 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+login.loginCookieNetscape=🍪 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐯𝐢𝐚 𝐂𝐨𝐨𝐤𝐢𝐞 𝐍𝐞𝐭𝐬𝐜𝐚𝐩𝐞 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+login.loginCookieArray=🍪 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐯𝐢𝐚 𝐂𝐨𝐨𝐤𝐢𝐞 𝐀𝐫𝐫𝐚𝐲 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+login.loginPassword=🔐 𝐓𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐞 𝐝𝐞 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐯𝐢𝐚 𝐥𝐞𝐬 𝐢𝐝𝐞𝐧𝐭𝐢𝐟𝐢𝐚𝐧𝐭𝐬 𝐝𝐮 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐠.𝐣𝐬𝐨𝐧...
+login.accountError=❌ 𝐃𝐨𝐧𝐧é𝐞𝐬 𝐝𝐞 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐞𝐫𝐫𝐨𝐧é𝐞𝐬. 𝐈𝐧𝐬è𝐫𝐞 𝐮𝐧 𝐓𝐨𝐤𝐞𝐧 𝐯𝐚𝐥𝐢𝐝𝐞 (%1) 𝐨𝐮 𝐮𝐧 𝐂𝐨𝐨𝐤𝐢𝐞 𝐞𝐱𝐩𝐥𝐨𝐢𝐭𝐚𝐛𝐥𝐞 (%2 𝐨𝐮 %3) 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 %7.
+login.cannotFindAccount=❌ 𝐀𝐮𝐜𝐮𝐧 𝐜𝐨𝐦𝐩𝐭𝐞 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐝é𝐭𝐞𝐜𝐭é. 𝐂𝐡𝐨𝐢𝐬𝐢𝐬 𝐮𝐧𝐞 𝐦é𝐭𝐡𝐨𝐝𝐞 𝐝'𝐢𝐧𝐯𝐨𝐜𝐚𝐭𝐢𝐨𝐧 (𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐧𝐨𝐦𝐛𝐫𝐞 𝐚𝐬𝐬𝐨𝐜𝐢é 𝐞𝐭 𝐯𝐚𝐥𝐢𝐝𝐞 𝐚𝐯𝐞𝐜 𝐄𝐧𝐭𝐫é𝐞) :
+login.chooseAccount=1. 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐩𝐚𝐫 𝐄𝐦𝐚𝐢𝐥 𝐞𝐭 𝐌𝐨𝐭 𝐝𝐞 𝐩𝐚𝐬𝐬𝐞
+login.chooseToken=2. 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐩𝐚𝐫 𝐓𝐨𝐤𝐞𝐧 𝐝'𝐚𝐜𝐜è𝐬 𝐭𝐨𝐭𝐚𝐥
+login.chooseCookieString=3. 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐩𝐚𝐫 𝐂𝐨𝐨𝐤𝐢𝐞 (𝐅𝐨𝐫𝐦𝐚𝐭 𝐒𝐭𝐫𝐢𝐧𝐠)
+login.chooseCookieArray=4. 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐩𝐚𝐫 𝐂𝐨𝐨𝐤𝐢𝐞 (𝐅𝐨𝐫𝐦𝐚𝐭 𝐀𝐫𝐫𝐚𝐲)
+login.loginWith=⚡ 𝐎𝐩𝐭𝐢𝐨𝐧 𝐬é𝐥𝐞𝐜𝐭𝐢𝐨𝐧𝐧é𝐞 : %1
+login.inputEmail=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥'𝐢𝐝𝐞𝐧𝐭𝐢𝐟𝐢𝐚𝐧𝐭 (𝐄𝐦𝐚𝐢𝐥/𝐍𝐮𝐦é𝐫𝐨) 𝐝𝐮 𝐜𝐨𝐦𝐩𝐭𝐞 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 :
+login.inputPassword=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐦𝐨𝐭 𝐝𝐞 𝐩𝐚𝐬𝐬𝐞 𝐝𝐮 𝐜𝐨𝐦𝐩𝐭𝐞 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 :
+login.input2FA=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐜𝐨𝐝𝐞 𝐝𝐞 𝐝𝐨𝐮𝐛𝐥𝐞 𝐚𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝟐𝐅𝐀 (𝐋𝐚𝐢𝐬𝐬𝐞 𝐯𝐢𝐝𝐞 𝐬𝐢 𝐢𝐧𝐞𝐱𝐢𝐬𝐭𝐚𝐧𝐭) :
+login.inputToken=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐓𝐨𝐤𝐞𝐧 𝐝'𝐚𝐜𝐜è𝐬 𝐭𝐨𝐭𝐚𝐥 (𝐂𝐨𝐦𝐦𝐞𝐧ç𝐚𝐧𝐭 𝐩𝐚𝐫 𝐄𝐀𝐀𝐀𝐀) :
+login.inputCookieString=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐂𝐨𝐨𝐤𝐢𝐞 𝐚𝐮 𝐟𝐨𝐫𝐦𝐚𝐭 𝐒𝐭𝐫𝐢𝐧𝐠 :
+login.inputCookieArray=> 𝐒𝐚𝐢𝐬𝐢𝐬 𝐥𝐞 𝐂𝐨𝐨𝐤𝐢𝐞 𝐚𝐮 𝐟𝐨𝐫𝐦𝐚𝐭 𝐀𝐫𝐫𝐚𝐲 :
+login.refreshCookie=🔄 𝐑é𝐠é𝐧é𝐫𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐜𝐨𝐨𝐤𝐢𝐞𝐬 𝐬𝐲𝐬𝐭𝐞𝐦𝐞...
+login.refreshCookieError=❌ É𝐜𝐡𝐞𝐜 𝐜𝐫𝐢𝐭𝐢𝐪𝐮𝐞 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥𝐚 𝐫é𝐠é𝐧é𝐫𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐜𝐨𝐨𝐤𝐢𝐞𝐬.
+login.refreshCookieSuccess=✅ 𝐂𝐨𝐨𝐤𝐢𝐞𝐬 𝐫é𝐠é𝐧é𝐫é𝐬 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬. 𝐑𝐞𝐝é𝐦𝐚𝐫𝐫𝐞 𝐥𝐞 𝐛𝐨𝐭 𝐩𝐨𝐮𝐫 𝐬𝐜𝐞𝐥𝐥𝐞𝐫 𝐥𝐞𝐬 𝐦𝐨𝐝𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬.
+login.refreshCookieWarning=⚠️ 𝐌𝐨𝐝𝐞 𝐫é𝐠é𝐧é𝐫𝐚𝐭𝐢𝐨𝐧 𝐚𝐜𝐭𝐢𝐯é, 𝐦𝐚𝐢𝐬 𝐥𝐞𝐬 𝐢𝐝𝐞𝐧𝐭𝐢𝐟𝐢𝐚𝐧𝐭𝐬 𝐬𝐨𝐧𝐭 𝐚𝐛𝐬𝐞𝐧𝐭𝐬 𝐝𝐮 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐠.𝐣𝐬𝐨𝐧.
+login.tokenError=❌ 𝐓𝐨𝐤𝐞𝐧 𝐢𝐧𝐯𝐚𝐥𝐢𝐝𝐞 𝐨𝐮 𝐞𝐱𝐩𝐢𝐫é. 𝐈𝐧𝐬è𝐫𝐞 𝐮𝐧 𝐓𝐨𝐤𝐞𝐧 𝐯𝐚𝐥𝐢𝐝𝐞 (%1) 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 %2.
+login.cookieError=❌ 𝐋𝐞𝐬 𝐜𝐨𝐨𝐤𝐢𝐞𝐬 𝐟𝐨𝐮𝐫𝐧𝐢𝐬 𝐬𝐨𝐧𝐭 𝐜𝐨𝐫𝐫𝐨𝐦𝐩𝐮𝐬 𝐨𝐮 𝐨𝐛𝐬𝐨𝐥è𝐭𝐞𝐬.
+login.loginPasswordError=❌ É𝐜𝐡𝐞𝐜 𝐝'𝐚𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐩𝐚𝐫 𝐜𝐨𝐮𝐩𝐥𝐞 𝐄𝐦𝐚𝐢𝐥/𝐌𝐨𝐭 𝐝𝐞 𝐩𝐚𝐬𝐬𝐞.
+login.loginSuccess=👁️‍🗨️ 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 é𝐭𝐚𝐛𝐥𝐢𝐞. 𝐋𝐞 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 𝐞𝐬𝐭 𝐬𝐨𝐮𝐬 𝐜𝐨𝐧𝐭𝐫ô𝐥𝐞.
+login.loginError=❌ 𝐔𝐧𝐞 𝐚𝐧𝐨𝐦𝐚𝐥𝐢𝐞 𝐚 𝐛𝐥𝐨𝐪𝐮é 𝐥𝐚 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐞 𝐝𝐞 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧.
+login.openDashboardSuccess=🚀 𝐋𝐞 𝐩𝐚𝐧𝐧𝐞𝐚𝐮 𝐝𝐞 𝐜𝐨𝐧𝐭𝐫ô𝐥𝐞 𝐝𝐮 𝐛𝐨𝐭 𝐚 é𝐭é 𝐝é𝐩𝐥𝐨𝐲é 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬.
+login.openDashboardError=❌ 𝐈𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞 𝐝𝐞 𝐝é𝐩𝐥𝐨𝐲𝐞𝐫 𝐥𝐞 𝐩𝐚𝐧𝐧𝐞𝐚𝐮 𝐝𝐞 𝐜𝐨𝐧𝐭𝐫ô𝐥𝐞.
+login.changeGbanData=🚨 𝐒É𝐂𝐔𝐑𝐈𝐓É : 𝐋𝐄𝐒 𝐃𝐎𝐍𝐍É𝐄𝐒 𝐎𝐍𝐓 É𝐓É 𝐌𝐎𝐃𝐈𝐅𝐈É𝐄𝐒. 𝐕𝐄𝐑𝐑𝐎𝐔𝐈𝐋𝐋𝐀𝐆𝐄 𝐃𝐔 𝐁𝐎𝐓.
+login.errorNoti=❌ 𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥𝐚 𝐫é𝐜𝐮𝐩é𝐫𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐧𝐨𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬 𝐬𝐲𝐬𝐭𝐞𝐦𝐞.
+login.refreshFbstateSuccess=✅ 𝐋𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐝'é𝐭𝐚𝐭 %1 𝐚 é𝐭é 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬é.
+login.refreshFbstateError=❌ 𝐈𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞 𝐝𝐞 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬𝐞𝐫 𝐥𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐝'é𝐭𝐚𝐭 %1.
+login.youAreBanned=💀 𝐓𝐮 𝐚𝐬 é𝐭é 𝐛𝐚𝐧𝐧𝐢 𝐝é𝐟𝐢𝐧𝐢𝐭𝐢𝐯𝐞𝐦𝐞𝐧𝐭 𝐝𝐮 𝐩𝐫𝐨𝐣𝐞𝐭 𝐨𝐫𝐢𝐠𝐢𝐧𝐞𝐥.
+login.runBot=👑 𝐈𝐧𝐯𝐨𝐜𝐚𝐭𝐢𝐨𝐧 𝐫é𝐮𝐬𝐬𝐢𝐞. 𝐌𝐚𝐝𝐚𝐫𝐚 é𝐜𝐨𝐮𝐭𝐞 𝐝é𝐬𝐨𝐫𝐦𝐚𝐢𝐬 𝐥𝐞𝐬 𝐦𝐮𝐫𝐦𝐮𝐫𝐞𝐬 𝐝𝐞𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫𝐬.
+login.notLoggedIn=❌ 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐢𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞. 𝐕é𝐫𝐢𝐟𝐢𝐞 𝐥𝐞𝐬 𝐚𝐜𝐜è𝐬 𝐝𝐮 𝐜𝐨𝐦𝐩𝐭𝐞 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤.
+login.callBackError=❌ 𝐄𝐫𝐫𝐞𝐮𝐫 𝐜𝐫𝐢𝐭𝐢𝐪𝐮𝐞 𝐬𝐮𝐫 𝐥𝐞 𝐜𝐚𝐥𝐥𝐛𝐚𝐜𝐤 𝐥𝐢𝐬𝐭𝐞𝐧𝐌𝐪𝐭𝐭.
+login.userBanned=❌ 𝐓𝐮 𝐞𝐬 𝐟𝐫𝐚𝐩𝐩é 𝐩𝐚𝐫 𝐮𝐧 𝐛𝐚𝐧𝐧𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐠𝐥𝐨𝐛𝐚𝐥. 𝐓𝐮 𝐧𝐞 𝐩𝐞𝐮𝐱 𝐩𝐥𝐮𝐬 𝐦'𝐢𝐧𝐯𝐨𝐜𝐚𝐭𝐢𝐨𝐧.
+login.checkGbanError=❌ 𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐞 𝐥𝐚 𝐯é𝐫𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐝𝐮 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞 𝐝𝐞𝐬 𝐛𝐚𝐧𝐧𝐢. 𝐓𝐞𝐧𝐭𝐞 𝐮𝐧𝐞 𝐦𝐢𝐬𝐞 𝐚̀ 𝐣𝐨𝐮𝐫 𝐯𝐢𝐚 : 𝐧𝐨𝐝𝐞 𝐮𝐩𝐝𝐚𝐭𝐞
+login.gbanMessage=💀 𝐁𝐚𝐧𝐧𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐠𝐥𝐨𝐛𝐚𝐥 𝐝é𝐭𝐞𝐜𝐭é 𝐥𝐞 %1.\n𝐑𝐚𝐢𝐬𝐨𝐧 : %2\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3
+login.gbanMessageToDate=💀 𝐁𝐚𝐧𝐧𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐠𝐥𝐨𝐛𝐚𝐥 𝐝é𝐭𝐞𝐜𝐭é 𝐥𝐞 %1.\n𝐑𝐚𝐢𝐬𝐨𝐧 : %2\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n⏳ 𝐉𝐮𝐬𝐪𝐮'𝐚𝐮 : %4
+login.gbanAdminMessage=🚨 𝐋'𝐢𝐧𝐭𝐫𝐮𝐬 %1 𝐚 é𝐭é 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐩𝐫𝐨𝐣𝐞𝐭 𝐠𝐥𝐨𝐛𝐚𝐥 𝐥𝐞 %2. 𝐑𝐚𝐢𝐬𝐨𝐧 : %3
+login.openServerUptimeSuccess=🚀 𝐒𝐞𝐫𝐯𝐞𝐮𝐫 𝐔𝐩𝐭𝐢𝐦𝐞 𝐝é𝐩𝐥𝐨𝐲é 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬 : %1
+login.openServerUptimeError=❌ É𝐜𝐡𝐞𝐜 𝐝𝐞 𝐝é𝐩𝐥𝐨𝐢𝐞𝐦𝐞𝐧𝐭 𝐝𝐮 𝐬𝐞𝐫𝐯𝐞𝐮𝐫 𝐔𝐩𝐭𝐢𝐦𝐞.
+login.restartListenMessage=🔄 𝐑𝐞𝐝é𝐦𝐚𝐫𝐫𝐚𝐠𝐞 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐪𝐮𝐞 𝐝𝐞 𝐋𝐢𝐬𝐭𝐞𝐧𝐌𝐐𝐓𝐓 𝐜𝐨𝐧𝐟𝐢𝐠𝐮𝐫é 𝐭𝐨𝐮𝐭𝐞𝐬 𝐥𝐞𝐬 %1.
+login.stopRestartListenMessage=🔕 𝐑𝐞𝐝é𝐦𝐚𝐫𝐫𝐚𝐠𝐞 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐪𝐮𝐞 𝐝𝐞 𝐋𝐢𝐬𝐭𝐞𝐧𝐌𝐐𝐓𝐓 𝐝é𝐬𝐚𝐜𝐭𝐢𝐯é.
+login.restartListenMessageError=❌ 𝐄𝐫𝐫𝐞𝐮𝐫 𝐥𝐨𝐫𝐬 𝐝𝐮 𝐫𝐞𝐝é𝐦𝐚𝐫𝐫𝐚𝐠𝐞 𝐝𝐞 𝐋𝐢𝐬𝐭𝐞𝐧𝐌𝐐𝐓𝐓.
+login.restartListenMessage2=✅ 𝐋𝐢𝐬𝐭𝐞𝐧𝐌𝐐𝐓𝐓 𝐚 é𝐭é 𝐫é𝐢𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐬é 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬.
+login.refreshCookieAfter=🔄 𝐀𝐮𝐭𝐨-𝐫𝐚𝐟𝐫𝐚î𝐜𝐡𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐝𝐞𝐬 𝐜𝐨𝐨𝐤𝐢𝐞𝐬 𝐩𝐫𝐨𝐠𝐫𝐚𝐦𝐦é 𝐭𝐨𝐮𝐭𝐞𝐬 𝐥𝐞𝐬 %1.
+login.listenMqttClose=🔌 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐢𝐧𝐭𝐞𝐫𝐫𝐨𝐦𝐩𝐮𝐞 𝐚𝐯𝐞𝐜 𝐥𝐞 𝐬𝐞𝐫𝐯𝐞𝐮𝐫 𝐌𝐐𝐓𝐓.
+login.listenMqttCloseByUser=🔌 𝐂𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐚𝐯𝐞𝐜 𝐥𝐞 𝐬𝐞𝐫𝐯𝐞𝐮𝐫 𝐌𝐐𝐓𝐓 𝐜𝐨𝐮𝐩é𝐞 𝐩𝐚𝐫 𝐥'𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫.
+login.retryCheckLiveCookie=🔄 𝐀𝐧𝐚𝐥𝐲𝐬𝐞 𝐝𝐞 𝐥𝐚 𝐯𝐢𝐚𝐛𝐢𝐥𝐢𝐭é 𝐝𝐞𝐬 𝐜𝐨𝐨𝐤𝐢𝐞𝐬... %1
+login.startBotSuccess=👑 𝐈𝐧𝐯𝐨𝐜𝐚𝐭𝐢𝐨𝐧 𝐜𝐨𝐦𝐩𝐥é𝐭é𝐞. 𝐏𝐫ê𝐭 𝐚̀ 𝐫𝐞𝐜𝐞𝐯𝐨𝐢𝐫 𝐥𝐞𝐬 𝐨𝐫𝐝𝐫𝐞𝐬 𝐝𝐞𝐬 𝐦𝐨𝐫𝐭𝐞𝐥𝐬.
 
-version.tooOldVersion=❌ Ton 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 est obsolète. Mets à jour le code immédiatement en saisissant : %1
+version.tooOldVersion=❌ 𝐓𝐨𝐧 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 𝐞𝐬𝐭 𝐨𝐛𝐬𝐨𝐥è𝐭𝐞. 𝐌𝐞𝐭𝐬 𝐚̀ 𝐣𝐨𝐮𝐫 𝐥𝐞 𝐜𝐨𝐝𝐞 𝐢𝐦𝐦é𝐝𝐢𝐚𝐭𝐞𝐦𝐞𝐧𝐭 𝐞𝐧 𝐬𝐚𝐢𝐬𝐢𝐬𝐬𝐚𝐧𝐭 : %1
 
 # bot/custom.js
-custom.refreshedFb_dtsg=✅ Jetons fb_dtsg et jazoest synchronisés.
-custom.refreshedFb_dtsgError=❌ Échec de la synchronisation des jetons de sécurité.
+custom.refreshedFb_dtsg=✅ 𝐉𝐞𝐭𝐨𝐧𝐬 𝐟𝐛_𝐝𝐭𝐬g 𝐞𝐭 𝐣𝐚𝐳𝐨𝐞𝐬𝐭 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬é𝐬.
+custom.refreshedFb_dtsgError=❌ É𝐜𝐡𝐞𝐜 𝐝𝐞 𝐥𝐚 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐣𝐞𝐭𝐨𝐧𝐬 𝐝𝐞 𝐬é𝐜𝐮𝐫𝐢𝐭é.
 
 # bot/login/loadData.js
-loadData.loadThreadDataSuccess=📜 Mémoire chargée : %1 groupes synchronisés.
-loadData.loadUserDataSuccess=📜 Mémoire chargée : %1 utilisateurs répertoriés.
-loadData.refreshingThreadData=🔄 Actualisation des bases de données des clans en cours...
-loadData.refreshThreadDataSuccess=✅ Données de %1 groupes mises à jour.
-loadData.refreshThreadDataError=❌ Échec d'actualisation des registres de groupes.
+loadData.loadThreadDataSuccess=📜 𝐌é𝐦𝐨𝐢𝐫𝐞 𝐜𝐡𝐚𝐫𝐠é𝐞 : %1 𝐠𝐫𝐨𝐮𝐩𝐞𝐬 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬é𝐬.
+loadData.loadUserDataSuccess=📜 𝐌é𝐦𝐨𝐢𝐫𝐞 𝐜𝐡𝐚𝐫𝐠é𝐞 : %1 𝐮𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫𝐬 𝐫é𝐩𝐞𝐫𝐭𝐨𝐫𝐢é𝐬.
+loadData.refreshingThreadData=🔄 𝐀𝐜𝐭𝐮𝐚𝐥𝐢𝐬𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐛𝐚𝐬𝐞𝐬 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐝𝐞𝐬 𝐜𝐥𝐚𝐧𝐬 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+loadData.refreshThreadDataSuccess=✅ 𝐃𝐨𝐧𝐧é𝐞𝐬 𝐝𝐞 %1 𝐠𝐫𝐨𝐮𝐩𝐞𝐬 𝐦𝐢𝐬𝐞𝐬 𝐚̀ 𝐣𝐨𝐮𝐫.
+loadData.refreshThreadDataError=❌ É𝐜𝐡𝐞𝐜 𝐝'𝐚𝐜𝐭𝐮𝐚𝐥𝐢𝐬𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞𝐬 𝐝𝐞 𝐠𝐫𝐨𝐮𝐩𝐞𝐬.
 
 # bot/login/loadScripts.js
-loadScripts.loadScriptsError=❌ Les fichiers suivants contiennent des anomalies de syntaxe et ont été ignorés : %1
-loadScripts.loadScriptsNotMatchOrigin=⚠️ Les modules suivants diffèrent de la source officielle GitHub. Assure-toi de leur fiabilité : %1
-loadScripts.NOT_FOUND=N'EXISTE PAS DANS LA SOURCE OFFICIELLE :
-loadScripts.NOT_MATCH=MODIFIÉ PAR RAPPORT À LA SOURCE OFFICIELLE :
+loadScripts.loadScriptsError=❌ 𝐋𝐞𝐬 𝐟𝐢𝐜𝐡𝐢𝐞𝐫𝐬 𝐬𝐮𝐢𝐯𝐚𝐧𝐭𝐬 𝐜𝐨𝐧𝐭𝐢𝐞𝐧𝐧𝐞𝐧𝐭 𝐝𝐞𝐬 𝐚𝐧𝐨𝐦𝐚𝐥𝐢𝐞𝐬 𝐝𝐞 𝐬𝐲𝐧𝐭𝐚𝐱𝐞 𝐞𝐭 𝐨𝐧𝐭 é𝐭é 𝐢𝐠𝐧𝐨𝐫é𝐬 : %1
+loadScripts.loadScriptsNotMatchOrigin=⚠️ 𝐋𝐞𝐬 𝐦𝐨𝐝𝐮𝐥𝐞𝐬 𝐬𝐮𝐢𝐯𝐚𝐧𝐭𝐬 𝐝𝐢𝐟𝐟è𝐫𝐞𝐧𝐭 𝐝𝐞 𝐥𝐚 𝐬𝐨𝐮𝐫𝐜𝐞 𝐨𝐟𝐟𝐢𝐜𝐢𝐞𝐥𝐥𝐞 𝐆𝐢𝐭𝐇𝐮𝐛. 𝐀𝐬𝐬𝐮𝐫𝐞-𝐭𝐨𝐢 𝐝𝐞 𝐥𝐞𝐮𝐫 𝐟𝐢𝐚𝐛𝐢𝐥𝐢𝐭é : %1
+loadScripts.NOT_FOUND=𝐍'𝐄𝐗𝐈𝐒𝐓𝐄 𝐏𝐀𝐒 𝐃𝐀𝐍𝐒 𝐋𝐀 𝐒𝐎𝐔𝐑𝐂𝐄 𝐎𝐅𝐅𝐈𝐂𝐈𝐄𝐋𝐋𝐄 :
+loadScripts.NOT_MATCH=𝐌𝐎𝐃𝐈𝐅𝐈É 𝐏𝐀𝐑 𝐑𝐀𝐏𝐏𝐎𝐑𝐓 𝐀̀ 𝐋𝐀 𝐒𝐎𝐔𝐑𝐂𝐄 𝐎𝐅𝐅𝐈𝐂𝐈𝐄𝐋𝐋𝐄 :
 
 # bot/login/socketIO.js
-socketIO.connected=🌐 Serveur Socket.io initialisé et opérationnel.
-socketIO.error=❌ Échec d'initialisation du serveur Socket.io.
+socketIO.connected=🌐 𝐒𝐞𝐫𝐯𝐞𝐮𝐫 𝐒𝐨𝐜𝐤𝐞𝐭.𝐢𝐨 𝐢𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐬é 𝐞𝐭 𝐨𝐩é𝐫𝐚𝐭𝐢𝐨𝐧𝐧𝐞𝐥.
+socketIO.error=❌ É𝐜𝐡𝐞𝐜 𝐝'𝐢𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐬𝐚𝐭𝐢𝐨𝐧 𝐝𝐮 𝐬𝐞𝐫𝐯𝐞𝐮𝐫 𝐒𝐨𝐜𝐤𝐞𝐭.𝐢𝐨.
 
 # bot/handler/handlerCheckData.js
-handlerCheckData.cantCreateThread=❌ Impossible d'enregistrer le groupe ID '%1' dans l'archive.
-handlerCheckData.cantCreateUser=❌ Impossible d'enregistrer l'utilisateur ID '%1' dans le registre.
+handlerCheckData.cantCreateThread=❌ 𝐈𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞 𝐝'𝐞𝐧𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞𝐫 𝐥𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐈𝐃 '%1' 𝐝𝐚𝐧𝐬 𝐥'𝐚𝐫𝐜𝐡𝐢𝐯𝐞.
+handlerCheckData.cantCreateUser=❌ 𝐈𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞 𝐝'𝐞𝐧𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞𝐫 𝐥'𝐮𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫 𝐈𝐃 '%1' 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐞.
 
 # bot/handler/handlerEvents.js
-handlerEvents.userBanned=❌ Tu as été banni par l'autorité supérieure.\nRaison : %1\n⏳ Expiration : %2\n🆔 Ton 𝐮𝐢𝐝 : %3
-handlerEvents.threadBanned=❌ Ce groupe a été banni de mes services.\nRaison : %1\n⏳ Expiration : %2\n🆔 ID Groupe : %3
-handlerEvents.onlyAdminBox=🔒 Seuls les dirigeants de ce clan ont le droit de m'adresser la parole ici.
-handlerEvents.onlyAdminBot=❌ Seul le créateur de ce 𝐛𝐨𝐭 peut m'invoquer actuellement.
-handlerEvents.commandNotFound=❌ Le jutsu "%1" n'existe pas. Saisis %2help pour voir mon grimoire.
-handlerEvents.commandNotFound2=❌ Cette technique est inconnue. Saisis %1help pour voir la liste.
-handlerEvents.commandSyntaxError=❌ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 incorrecte. Réfère-toi à la doctrine via : %1help %2
-handlerEvents.onlyAdmin=❌ Seuls les administrateurs de cette conversation peuvent utiliser la technique "%1".
-handlerEvents.onlyAdminToUseOnReply=❌ Seuls les administrateurs ont le droit de répliquer à la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1".
-handlerEvents.onlyAdminToUseOnReaction=❌ Seuls les administrateurs peuvent déclencher les réactions du jutsu "%1".
-handlerEvents.onlyAdminBot2=❌ Cette technique "%1" est exclusive à mon maître.
-handlerEvents.onlyAdminBot2ToUseOnReply=❌ Seul mon maître peut utiliser la fonction de réponse sur le jutsu "%1".
-handlerEvents.onlyAdminBot2ToUseOnReaction=❌ Seul mon maître peut utiliser les réactions sur le jutsu "%1".
-handlerEvents.waitingForCommand=⏱️ Ton flux de chakra est épuisé. Patiente %1s avant de réutiliser cette technique.
-handlerEvents.errorOccurred=❌ [ %1 ]\nUne déchirure temporelle est survenue sur la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
-handlerEvents.errorOccurred2=❌ [ %1 ]\nAnomalie détectée dans l'événement onChat du jutsu "%2"\n\n%3
-handlerEvents.errorOccurred3=❌ [ %1 ]\nÉchec d'exécution de onReply sur la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
-handlerEvents.errorOccurred4=❌ [ %1 ]\nÉchec d'exécution de onReaction sur la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
-handlerEvents.errorOccurred5=❌ [ %1 ]\nErreur critique sur l'événement 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 "%2"\n\n%3
-handlerEvents.errorOccurred6=❌ [ %1 ]\nErreur détectée dans onEvent sur le module "%2"\n\n%3
-handlerEvents.errorOccurred7=❌ [ %1 ]\nÉchec d'exécution globale onAnyEvent sur la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
-handlerEvents.cannotFindCommandName=❌ Impossible d'identifier la 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 mère pour exécuter cette action.
-handlerEvents.cannotFindCommand=❌ Le module "%1" a disparu de la mémoire du 𝐛𝐨𝐭.
+handlerEvents.userBanned=❌ 𝐓𝐮 𝐚𝐬 é𝐭é 𝐛𝐚𝐧𝐧𝐢 𝐩𝐚𝐫 𝐥'𝐚𝐮𝐭𝐨𝐫𝐢𝐭é 𝐬𝐮𝐩é𝐫𝐢𝐞𝐮𝐫𝐞.\n𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n⏳ 𝐄𝐱𝐩𝐢𝐫𝐚𝐭𝐢𝐨𝐧 : %2\n🆔 𝐓𝐨𝐧 𝐮𝐢𝐝 : %3
+handlerEvents.threadBanned=❌ 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐚 é𝐭é 𝐛𝐚𝐧𝐧𝐢 𝐝𝐞 𝐦𝐞𝐬 𝐬𝐞𝐫𝐯𝐢𝐜𝐞𝐬.\n𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n⏳ 𝐄𝐱𝐩𝐢𝐫𝐚𝐭𝐢𝐨𝐧 : %2\n🆔 𝐈𝐃 𝐆𝐫𝐨𝐮𝐩𝐞 : %3
+handlerEvents.onlyAdminBox=🔒 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐝𝐢𝐫𝐢𝐠𝐞𝐚𝐧𝐭𝐬 𝐝𝐞 𝐜𝐞 𝐜𝐥𝐚𝐧 𝐨𝐧𝐭 𝐥𝐞 𝐝𝐫𝐨𝐢𝐭 𝐝𝐞 𝐦'𝐚𝐝𝐫𝐞𝐬𝐬𝐞𝐫 𝐥𝐚 𝐩𝐚𝐫𝐨𝐥𝐞 𝐢𝐜𝐢.
+handlerEvents.onlyAdminBot=❌ 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐜𝐫é𝐚𝐭𝐞𝐮𝐫 𝐝𝐞 𝐜𝐞 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐦'𝐢𝐧𝐯𝐨𝐜𝐚𝐭𝐢𝐨𝐧 𝐚𝐜𝐭𝐮𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭.
+handlerEvents.commandNotFound=❌ 𝐋𝐞 𝐣𝐮𝐭𝐬𝐮 "%1" 𝐧'𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬. 𝐒𝐚𝐢𝐬𝐢𝐬 %2𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐦𝐨𝐧 𝐠𝐫𝐢𝐦𝐨𝐢𝐫𝐞.
+handlerEvents.commandNotFound2=❌ 𝐂𝐞𝐭𝐭𝐞 𝐭𝐞𝐜𝐡𝐧𝐢𝐪𝐮𝐞 𝐞𝐬𝐭 𝐢𝐧𝐜𝐨𝐧𝐧𝐮𝐞. 𝐒𝐚𝐢𝐬𝐢𝐬 %1𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐚 𝐥𝐢𝐬𝐭𝐞.
+handlerEvents.commandSyntaxError=❌ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐢𝐧𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐞. 𝐑é𝐟è𝐫𝐞-𝐭𝐨𝐢 𝐚̀ 𝐥𝐚 𝐝𝐨𝐜𝐭𝐫𝐢𝐧𝐞 𝐯𝐢𝐚 : %1𝐡𝐞𝐥𝐩 %2
+handlerEvents.onlyAdmin=❌ 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬 𝐝𝐞 𝐜𝐞𝐭𝐭𝐞 𝐜𝐨𝐧𝐯𝐞𝐫𝐬𝐚𝐭𝐢𝐨𝐧 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐭𝐞𝐜𝐡𝐧𝐢𝐪𝐮𝐞 "%1".
+handlerEvents.onlyAdminToUseOnReply=❌ 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬 𝐨𝐧𝐭 𝐥𝐞 𝐝𝐫𝐨𝐢𝐭 𝐝𝐞 𝐫é𝐩𝐥𝐢𝐪𝐮𝐞𝐫 𝐚̀ 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1".
+handlerEvents.onlyAdminToUseOnReaction=❌ 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐝é𝐜𝐥𝐞𝐧𝐜𝐡𝐞𝐫 𝐥𝐞𝐬 𝐫é𝐚𝐜𝐭𝐢𝐨𝐧𝐬 𝐝𝐮 𝐣𝐮𝐭𝐬𝐮 "%1".
+handlerEvents.onlyAdminBot2=❌ 𝐂𝐞𝐭𝐭𝐞 𝐭𝐞𝐜𝐡𝐧𝐢𝐪𝐮𝐞 "%1" 𝐞𝐬𝐭 𝐞𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐚̀ 𝐦𝐨𝐧 𝐦𝐚î𝐭𝐫𝐞.
+handlerEvents.onlyAdminBot2ToUseOnReply=❌ 𝐒𝐞𝐮𝐥 𝐦𝐨𝐧 𝐦𝐚î𝐭𝐫𝐞 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐟𝐨𝐧𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 𝐫é𝐩𝐨𝐧𝐬𝐞 𝐬𝐮𝐫 𝐥𝐞 𝐣𝐮𝐭𝐬𝐮 "%1".
+handlerEvents.onlyAdminBot2ToUseOnReaction=❌ 𝐒𝐞𝐮𝐥 𝐦𝐨𝐧 𝐦𝐚î𝐭𝐫𝐞 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞𝐬 𝐫é𝐚𝐜𝐭𝐢𝐨𝐧𝐬 𝐬𝐮𝐫 𝐥𝐞 𝐣𝐮𝐭𝐬𝐮 "%1".
+handlerEvents.waitingForCommand=⏱️ 𝐓𝐨𝐧 𝐟𝐥𝐮𝐱 𝐝𝐞 𝐜𝐡𝐚𝐤𝐫𝐚 𝐞𝐬𝐭 é𝐩𝐮𝐢𝐬é. 𝐏𝐚𝐭𝐢𝐞𝐧𝐭𝐞 %1𝐬 𝐚𝐯𝐚𝐧𝐭 𝐝𝐞 𝐫é𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐜𝐞𝐭𝐭𝐞 𝐭𝐞𝐜𝐡𝐧𝐢𝐪𝐮𝐞.
+handlerEvents.errorOccurred=❌ [ %1 ]\n𝐔𝐧𝐞 𝐝é𝐜𝐡𝐢𝐫𝐮𝐫𝐞 𝐭𝐞𝐦𝐩𝐨𝐫𝐞𝐥𝐥𝐞 𝐞𝐬𝐭 𝐬𝐮𝐫𝐯𝐞𝐧𝐮𝐞 𝐬𝐮𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
+handlerEvents.errorOccurred2=❌ [ %1 ]\n𝐀𝐧𝐨𝐦𝐚𝐥𝐢𝐞 𝐝é𝐭𝐞𝐜𝐭é𝐞 𝐝𝐚𝐧𝐬 𝐥'é𝐯é𝐧𝐞𝐦𝐞𝐧𝐭 𝐨𝐧𝐂𝐡𝐚𝐭 𝐝𝐮 𝐣𝐮𝐭𝐬𝐮 "%2"\n\n%3
+handlerEvents.errorOccurred3=❌ [ %1 ]\nÉ𝐜𝐡𝐞𝐜 𝐝'𝐞𝐱é𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 𝐨𝐧𝐑𝐞𝐩𝐥𝐲 𝐬𝐮𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
+handlerEvents.errorOccurred4=❌ [ %1 ]\nÉ𝐜𝐡𝐞𝐜 𝐝'𝐞𝐱é𝐜𝐮𝐭𝐢𝐨𝐧 𝐝𝐞 𝐨𝐧𝐑𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐬𝐮𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
+handlerEvents.errorOccurred5=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐜𝐫𝐢𝐭𝐢𝐪𝐮𝐞 𝐬𝐮𝐫 𝐥'é𝐯é𝐧𝐞𝐦𝐞𝐧𝐭 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 "%2"\n\n%3
+handlerEvents.errorOccurred6=❌ [ %1 ]\n𝐄𝐫𝐫𝐞𝐮𝐫 𝐝é𝐭𝐞𝐜𝐭é𝐞 𝐝𝐚𝐧𝐬 𝐨𝐧𝐄𝐯𝐞𝐧𝐭 𝐬𝐮𝐫 𝐥𝐞 𝐦𝐨𝐝𝐮𝐥𝐞 "%2"\n\n%3
+handlerEvents.errorOccurred7=❌ [ %1 ]\nÉ𝐜𝐡𝐞𝐜 𝐝'𝐞𝐱é𝐜𝐮𝐭𝐢𝐨𝐧 𝐠𝐥𝐨𝐛𝐚𝐥𝐞 𝐨𝐧𝐀𝐧𝐲𝐄𝐯𝐞𝐧𝐭 𝐬𝐮𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3
+handlerEvents.cannotFindCommandName=❌ 𝐈𝐦𝐩𝐨𝐬𝐬𝐢𝐛𝐥𝐞 𝐝'𝐢𝐝𝐞𝐧𝐭𝐢𝐟𝐢𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐦è𝐫𝐞 𝐩𝐨𝐮𝐫 𝐞𝐱é𝐜𝐮𝐭𝐞𝐫 𝐜𝐞𝐭𝐭𝐞 𝐚𝐜𝐭𝐢𝐨𝐧.
+handlerEvents.cannotFindCommand=❌ 𝐋𝐞 𝐦𝐨𝐝𝐮𝐥𝐞 "%1" 𝐚 𝐝𝐢𝐬𝐩𝐚𝐫𝐮 𝐝𝐞 𝐥𝐚 𝐦é𝐦𝐨𝐢𝐫𝐞 𝐝𝐮 𝐛𝐨𝐭.
 
 # bot/autoUptime.js
-autoUptime.autoUptimeTurnedOn=♾️ Protocole autoUptime verrouillé et actif.
+autoUptime.autoUptimeTurnedOn=♾️ 𝐏𝐫𝐨𝐭𝐨𝐜𝐨𝐥𝐞 𝐚𝐮𝐭𝐨𝐔𝐩𝐭𝐢𝐦𝐞 𝐯𝐞𝐫𝐫𝐨𝐮𝐢𝐥𝐥é 𝐞𝐭 𝐚𝐜𝐭𝐢𝐟.
 
 # database/controller/index.js
-indexController.connectingMongoDB=💾 Établissement de la connexion avec la base de données MONGODB...
-indexController.connectMongoDBSuccess=💾 Base de données MONGODB synchronisée avec succès.
-indexController.connectMongoDBError=❌ Échec de connexion à la base de données MONGODB :
-indexController.connectingMySQL=💾 Établissement de la connexion avec la base de données SQLITE...
-indexController.connectMySQLSuccess=💾 Base de données SQLITE synchronisée avec succès.
-indexController.connectMySQLError=❌ Échec de connexion à la base de données SQLITE :
+indexController.connectingMongoDB=💾 É𝐭𝐚𝐛𝐥𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐝𝐞 𝐥𝐚 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐚𝐯𝐞𝐜 𝐥𝐚 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐌𝐎𝐍𝐆𝐎𝐃𝐁...
+indexController.connectMongoDBSuccess=💾 𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐌𝐎𝐍𝐆𝐎𝐃𝐁 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬é𝐞 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬.
+indexController.connectMongoDBError=❌ É𝐜𝐡𝐞𝐜 𝐝𝐞 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐚̀ 𝐥𝐚 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐌𝐎𝐍𝐆𝐎𝐃𝐁 :
+indexController.connectingMySQL=💾 É𝐭𝐚𝐛𝐥𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐝𝐞 𝐥𝐚 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐚𝐯𝐞𝐜 𝐥𝐚 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐒𝐐𝐋𝐈𝐓𝐄...
+indexController.connectMySQLSuccess=💾 𝐁𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐒𝐐𝐋𝐈𝐓𝐄 𝐬𝐲𝐧𝐜𝐡𝐫𝐨𝐧𝐢𝐬é𝐞 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬.
+indexController.connectMySQLError=❌ É𝐜𝐡𝐞𝐜 𝐝𝐞 𝐜𝐨𝐧𝐧𝐞𝐱𝐢𝐨𝐧 𝐚̀ 𝐥𝐚 𝐛𝐚𝐬𝐞 𝐝𝐞 𝐝𝐨𝐧𝐧é𝐞𝐬 𝐒𝐐𝐋𝐈𝐓𝐄 :
 
 # updater.js
-updater.updateTooFast=⏳ Ne précipite pas les choses. Patiente au moins 5 minutes entre chaque mise à jour. Temps restant : %1 min %2 sec.
-updater.latestVersion=✅ Ton 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 est à l'apogée de sa version. Aucune mise à jour requise.
-updater.cantFindVersion=⚠️ Signature version inconnue (%1). Vérifie la structure de ton package.json.
-updater.newVersions=📢 %1 nouvelles versions détectées. Lancement du processus d'assimilation...
-updater.updateSuccess=🔮 Fusion et mise à jour complétées avec succès %1
-updater.configChanged=⚠️ Le fichier %1 a été altéré. Inspecte les paramètres de ton fichier config.json.
-updater.installingPackages=📦 Déploiement et installation des dépendances 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 en cours...
-updater.installSuccess=📦 Dépendances installées. Redémarre l'instance pour appliquer la nouvelle puissance.
-updater.backupSuccess=🗄️ Sauvegarde de sécurité créée pour les fichiers modifiés dans le répertoire %1
-updater.restartToApply=. Redémarre le 𝐛𝐨𝐭 pour valider les modifications.
-updater.skipFile=⚠️ Version obsolète ignorée pour le fichier %1 selon tes directives antérieures (%2).
+updater.updateTooFast=⏳ 𝐍𝐞 𝐩𝐫é𝐜𝐢𝐩𝐢𝐭𝐞 𝐩𝐚𝐬 𝐥𝐞𝐬 𝐜𝐡𝐨𝐬𝐞𝐬. 𝐏𝐚𝐭𝐢𝐞𝐧𝐭𝐞 𝐚𝐮 𝐦𝐨𝐢𝐧𝐬 𝟓 𝐦𝐢𝐧𝐮𝐭𝐞𝐬 𝐞𝐧𝐭𝐫𝐞 𝐜𝐡𝐚𝐪𝐮𝐞 𝐦𝐢𝐬𝐞 𝐚̀ 𝐣𝐨𝐮𝐫. 𝐓𝐞𝐦𝐩𝐬 𝐫𝐞𝐬𝐭𝐚𝐧𝐭 : %1 𝐦𝐢𝐧 %2 𝐬𝐞𝐜.
+updater.latestVersion=✅ 𝐓𝐨𝐧 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 𝐞𝐬𝐭 𝐚̀ 𝐥'𝐚𝐩𝐨𝐠é𝐞 𝐝𝐞 𝐬𝐚 𝐯𝐞𝐫𝐬𝐢𝐨𝐧. 𝐀𝐮𝐜𝐮𝐧𝐞 𝐦𝐢𝐬𝐞 𝐚̀ 𝐣𝐨𝐮𝐫 𝐫𝐞𝐪𝐮𝐢𝐬𝐞.
+updater.cantFindVersion=⚠️ 𝐒𝐢𝐠𝐧𝐚𝐭𝐮𝐫𝐞 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐢𝐧𝐜𝐨𝐧𝐧𝐮𝐞 (%1). 𝐕é𝐫𝐢𝐟𝐢𝐞 𝐥𝐚 𝐬𝐭𝐫𝐮𝐜𝐭𝐮𝐫𝐞 𝐝𝐞 𝐭𝐨𝐧 𝐩𝐚𝐜𝐤𝐚𝐠𝐞.𝐣𝐬𝐨𝐧.
+updater.newVersions=📢 %1 𝐧𝐨𝐮𝐯𝐞𝐥𝐥𝐞𝐬 𝐯𝐞𝐫𝐬𝐢𝐨𝐧𝐬 𝐝é𝐭𝐞𝐜𝐭é𝐞𝐬. 𝐋𝐚𝐧𝐜𝐞𝐦𝐞𝐧𝐭 𝐝𝐮 𝐩𝐫𝐨𝐜𝐞𝐬𝐬𝐮𝐬 𝐝'𝐚𝐬𝐬𝐢𝐦𝐢𝐥𝐚𝐭𝐢𝐨𝐧...
+updater.updateSuccess=🔮 𝐅𝐮𝐬𝐢𝐨𝐧 𝐞𝐭 𝐦𝐢𝐬𝐞 𝐚̀ 𝐣𝐨𝐮𝐫 𝐜𝐨𝐦𝐩𝐥é𝐭é𝐞𝐬 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬 %1
+updater.configChanged=⚠️ 𝐋𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 %1 𝐚 é𝐭é 𝐚𝐥𝐭é𝐫é. 𝐈𝐧𝐬𝐩𝐞𝐜𝐭𝐞 𝐥𝐞𝐬 𝐩𝐚𝐫𝐚𝐦è𝐭𝐫𝐞𝐬 𝐝𝐞 𝐭𝐨𝐧 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐜𝐨𝐧𝐟𝐢𝐠.𝐣𝐬𝐨𝐧.
+updater.installingPackages=📦 𝐃é𝐩𝐥𝐨𝐢𝐞𝐦𝐞𝐧𝐭 𝐞𝐭 𝐢𝐧𝐬𝐭𝐚𝐥𝐥𝐚𝐭𝐢𝐨𝐧 𝐝𝐞𝐬 𝐝é𝐩𝐞𝐧𝐝𝐚𝐧𝐜𝐞𝐬 𝐬𝐲𝐬𝐭𝐞𝐦𝐞 𝐞𝐧 𝐜𝐨𝐮𝐫𝐬...
+updater.installSuccess=📦 𝐃é𝐩𝐞𝐧𝐝𝐚𝐧𝐜𝐞𝐬 𝐢𝐧𝐬𝐭𝐚𝐥𝐥é𝐞𝐬. 𝐑𝐞𝐝é𝐦𝐚𝐫𝐫𝐞 𝐥'𝐢𝐧𝐬𝐭𝐚𝐧𝐜𝐞 𝐩𝐨𝐮𝐫 𝐚𝐩𝐩𝐥𝐢𝐪𝐮𝐞𝐫 𝐥𝐚 𝐧𝐨𝐮𝐯𝐞𝐥𝐥𝐞 𝐩𝐮𝐢𝐬𝐬𝐚𝐧𝐜𝐞.
+updater.backupSuccess=🗄️ 𝐒𝐚𝐮𝐯𝐞𝐠𝐚𝐫𝐝𝐞 𝐝𝐞 𝐬é𝐜𝐮𝐫𝐢𝐭é 𝐜𝐫éé𝐞 𝐩𝐨𝐮𝐫 𝐥𝐞𝐬 𝐟𝐢𝐜𝐡𝐢𝐞𝐫𝐬 𝐦𝐨𝐝𝐢𝐟𝐢é𝐬 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐫é𝐩𝐞𝐫𝐭𝐨𝐢𝐫𝐞 %1
+updater.restartToApply=. 𝐑𝐞𝐝é𝐦𝐚𝐫𝐫𝐞 𝐥𝐞 𝐛𝐨𝐭 𝐩𝐨𝐮𝐫 𝐯𝐚𝐥𝐢𝐝𝐞𝐫 𝐥𝐞𝐬 𝐦𝐨𝐝𝐢𝐟𝐢𝐜𝐚𝐭𝐢𝐨𝐧𝐬.
+updater.skipFile=⚠️ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 𝐨𝐛𝐬𝐨𝐥è𝐭𝐞 𝐢𝐠𝐧𝐨𝐫é𝐞 𝐩𝐨𝐮𝐫 𝐥𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 %1 𝐬𝐞𝐥𝐨𝐧 𝐭𝐞𝐬 𝐝𝐢𝐫𝐞𝐜𝐭𝐢𝐯𝐞𝐬 𝐚𝐧𝐭é𝐫𝐢𝐞𝐮𝐫𝐞𝐬 (%2).
 
 # dashboard/routes/verifyfbid.js
-verifyfbid.sendCode=🔑 Ton code de scellement est :\n%1\nCe code s'autodétruira dans %2 minutes.
+verifyfbid.sendCode=🔑 𝐓𝐨𝐧 𝐜𝐨𝐝𝐞 𝐝𝐞 𝐬𝐜𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭 𝐞𝐬𝐭 :\n%1\n𝐂𝐞 𝐜𝐨𝐝𝐞 𝐬'𝐚𝐮𝐭𝐨𝐝é𝐭𝐫𝐮𝐢𝐫𝐚 𝐝𝐚𝐧𝐬 %2 𝐦𝐢𝐧𝐮𝐭𝐞𝐬.
 
 # utils.js
-utils.errorOccurred=❌ Une rupture dans la matrice est survenue :\n\n%1
+utils.errorOccurred=❌ 𝐔𝐧𝐞 𝐫𝐮𝐩𝐭𝐮𝐫𝐞 𝐝𝐚𝐧𝐬 𝐥𝐚 𝐦𝐚𝐭𝐫𝐢𝐜𝐞 𝐞𝐬𝐭 𝐬𝐮𝐫𝐯𝐞𝐧𝐮𝐞 :\n\n%1
 
 # for command
-command.restartedBot=🔄 Le 𝐛𝐨𝐭 a été réinitialisé par ordre supérieur.
+command.restartedBot=🔄 𝐋𝐞 𝐛𝐨𝐭 𝐚 é𝐭é 𝐫é𝐢𝐧𝐢𝐭𝐢𝐚𝐥𝐢𝐬é 𝐩𝐚𝐫 𝐨𝐫𝐝𝐫𝐞 𝐬𝐮𝐩é𝐫𝐢𝐞𝐮𝐫.
 
 # dashboard/app.js
-app.googleApiRefreshTokenExpired=❌ Le token de rafraîchissement Google API a expiré. Rétablis le lien sur : https://developers.google.com/oauthplayground/
-app.tooManyRequests=🚨 Trop de requêtes envoyées en une minute. Patiente, sous peine de bannissement temporaire.
-app.notPermissionChangeFbstate=❌ Tu n'as pas l'autorité nécessaire pour modifier le fichier fbstate.
-app.notFoundFbstate=❌ Donnée fbstate manquante. Saisie obligatoire.
-app.changedFbstateSuccess=✅ Fichier fbstate mis à jour avec succès.
-app.serverError=❌ Le serveur interne a subi un choc. Réessaye ultérieurement.
+app.googleApiRefreshTokenExpired=❌ 𝐋𝐞 𝐭𝐨𝐤𝐞𝐧 𝐝𝐞 𝐫𝐚𝐟𝐫𝐚î𝐜𝐡𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐆𝐨𝐨𝐠𝐥𝐞 𝐀𝐏𝐈 𝐚 𝐞𝐱𝐩𝐢𝐫é. 𝐑é𝐭𝐚𝐛𝐥𝐢𝐬 𝐥𝐞 𝐥𝐢𝐞𝐧 𝐬𝐮𝐫 : 𝐡𝐭𝐭𝐩𝐬://𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬.𝐠𝐨𝐨𝐠𝐥𝐞.𝐜𝐨𝐦/𝐨𝐚𝐮𝐭𝐡𝐩𝐥𝐚𝐲𝐠𝐫𝐨𝐮𝐧𝐝/
+app.tooManyRequests=🚨 𝐓𝐫𝐨𝐩 𝐝𝐞 𝐫𝐞𝐪𝐮ê𝐭𝐞𝐬 𝐞𝐧𝐯𝐨𝐲é𝐞𝐬 𝐞𝐧 𝐮𝐧𝐞 𝐦𝐢𝐧𝐮𝐭𝐞. 𝐏𝐚𝐭𝐢𝐞𝐧𝐭𝐞, 𝐬𝐨𝐮𝐬 𝐩𝐞𝐢𝐧𝐞 𝐝𝐞 𝐛𝐚𝐧𝐧𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭 𝐭𝐞𝐦𝐩𝐨𝐫𝐚𝐢𝐫𝐞.
+app.notPermissionChangeFbstate=❌ 𝐓𝐮 𝐧'𝐚𝐬 𝐩𝐚𝐬 𝐥'𝐚𝐮𝐭𝐨𝐫𝐢𝐭é 𝐧é𝐜𝐞𝐬𝐬𝐚𝐢𝐫𝐞 𝐩𝐨𝐮𝐫 𝐦𝐨𝐝𝐢𝐟𝐢𝐞𝐫 𝐥𝐞 𝐟𝐢𝐜𝐡𝐢𝐞𝐫 𝐟𝐛𝐬𝐭𝐚𝐭𝐞.
+app.notFoundFbstate=❌ 𝐃𝐨𝐧𝐧é𝐞 𝐟𝐛𝐬𝐭𝐚𝐭𝐞 𝐦𝐚𝐧𝐪𝐮𝐚𝐧𝐭𝐞. 𝐒𝐚𝐢𝐬𝐢𝐞 𝐨𝐛𝐥𝐢𝐠𝐚𝐭𝐨𝐢𝐫𝐞.
+app.changedFbstateSuccess=✅ 𝐅𝐢𝐜𝐡𝐢𝐞𝐫 𝐟𝐛𝐬𝐭𝐚𝐭𝐞 𝐦𝐢𝐬 𝐚̀ 𝐣𝐨𝐮𝐫 𝐚𝐯𝐞𝐜 𝐬𝐮𝐜𝐜è𝐬.
+app.serverError=❌ 𝐋𝐞 𝐬𝐞𝐫𝐯𝐞𝐮𝐫 𝐢𝐧𝐭𝐞𝐫𝐧𝐞 𝐚 𝐬𝐮𝐛𝐢 𝐮𝐧 𝐜𝐡𝐨𝐜. 𝐑é𝐞𝐬𝐬𝐚𝐲𝐞 𝐮𝐥𝐭é𝐫𝐢𝐞𝐮𝐫𝐞𝐦𝐞𝐧𝐭.
