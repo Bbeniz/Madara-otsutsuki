@@ -2,18 +2,18 @@ module.exports = {
 	config: {
 		name: "checkwarn",
 		version: "1.3",
-		author: "NTKhang",
+		credits: "The VOID KUN クン",
 		category: "events"
 	},
 
 	langs: {
 		vi: {
-			warn: "Thành viên %1 đã bị cảnh cáo đủ 3 lần trước đó và bị ban khỏi box chat\n- Name: %1\n- Uid: %2\n- Để gỡ ban vui lòng sử dụng lệnh \"%3warn unban <uid>\" (với uid là uid của người muốn gỡ ban)",
-			needPermission: "Bot cần quyền quản trị viên để kick thành viên bị ban"
+			warn: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐜𝐡𝐞𝐜𝐤𝐰𝐚𝐫𝐧\n └──────────────────┘\n  \n🚨 Thành viên %1 đã bị cảnh cáo đủ 3 lần trước đó và bị ban khỏi box chat\n\n👤 𝐧𝐚𝐦𝐞 : %1\n🆔 𝐮𝐢𝐝 : %2\n\n🔮 Để gỡ ban vui lòng sử dụng lệnh: \"%3warn unban <uid>\"\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			needPermission: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐜𝐡𝐞𝐜𝐤𝐰𝐚𝐫𝐧\n └──────────────────┘\n  \n❌ Bot cần quyền quản trị viên để kick thành viên bị ban.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
 		},
 		en: {
-			warn: "Member %1 has been warned 3 times before and has been banned from the chat box\n- Name: %1\n- Uid: %2\n- To unban, please use the \"%3warn unban <uid>\" command (with uid is the uid of the person you want to unban)",
-			needPermission: "Bot needs administrator permission to kick banned members"
+			warn: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐜𝐡𝐞𝐜𝐤𝐰𝐚𝐫𝐧\n └──────────────────┘\n  \n🚨 Member %1 has been warned 3 times before and has been banned from the chat box.\n\n👤 𝐧𝐚𝐦𝐞 : %1\n🆔 𝐮𝐢𝐝 : %2\n\n🔮 To unban, please use the command: \"%3warn unban <uid>\"\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			needPermission: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐜𝐡𝐞𝐜𝐤𝐰𝐚𝐫𝐧\n └──────────────────┘\n  \n❌ Bot needs administrator permission to kick banned members.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
 		}
 	},
 
@@ -27,7 +27,7 @@ module.exports = {
 					return;
 				const { addedParticipants } = event.logMessageData;
 				for (const user of addedParticipants) {
-					const findUser = warnList.find(user => user.userID == user.userID);
+					const findUser = warnList.find(u => u.userID == user.userFbId);
 					if (findUser && findUser.list >= 3) {
 						const userName = user.fullName;
 						const uid = user.userFbId;
