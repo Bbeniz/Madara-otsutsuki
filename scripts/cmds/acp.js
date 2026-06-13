@@ -5,11 +5,11 @@ module.exports = {
     name: "accept",
     aliases: ['acp'],
     version: "1.0",
-    author: "Loid Butter",
+    credits: "The VOID KUN クン",
     countDown: 8,
     role: 2,
-    shortDescription: "accept users",
-    longDescription: "accept users",
+    shortDescription: "Accepter ou refuser les demandes d'ami",
+    longDescription: "Gérer les demandes d'ami en attente sur le compte du bot",
     category: "owner",
   },
 
@@ -18,7 +18,7 @@ module.exports = {
     if (author !== event.senderID) return;
     const args = event.body.replace(/ +/g, " ").toLowerCase().split(" ");
 
-    clearTimeout(Reply.unsendTimeout); // Clear the timeout if the user responds within the countdown duration
+    clearTimeout(Reply.unsendTimeout);
 
     const form = {
       av: api.getCurrentUserID(),
@@ -46,7 +46,7 @@ module.exports = {
       form.doc_id = "4108254489275063";
     }
     else {
-      return api.sendMessage("Please select <add | del > <target number | or \"all\">", event.threadID, event.messageID);
+      return api.sendMessage("◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐚𝐜𝐜𝐞𝐩𝐭\n └──────────────────┘\n  \n❌ Choix invalide.\n\n🔮 Utilise :\n👉 add <numéro | all>\n👉 del <numéro | all>\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢", event.threadID, event.messageID);
     }
 
     let targetIDs = args.slice(1);
@@ -63,7 +63,7 @@ module.exports = {
     for (const stt of targetIDs) {
       const u = listRequest[parseInt(stt) - 1];
       if (!u) {
-        failed.push(`Can't find stt ${stt} in the list`);
+        failed.push(`Numéro ${stt} introuvable`);
         continue;
       }
       form.variables.input.friend_requester_id = u.node.id;
@@ -90,13 +90,21 @@ module.exports = {
     }
 
     if (success.length > 0) {
-      api.sendMessage(`» The ${args[0] === 'add' ? 'friend request' : 'friend request deletion'} has been processed for ${success.length} people:\n\n${success.join("\n")}${failed.length > 0 ? `\n» The following ${failed.length} people encountered errors: ${failed.join("\n")}` : ""}`, event.threadID, event.messageID);
+      const typeAction = args[0] === 'add' ? 'acceptations' : 'suppressions';
+      let msgResult = `◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐚𝐜𝐜𝐞𝐩𝐭\n └──────────────────┘\n  \n⚔️ Traitement des ${typeAction} réussi pour ${success.length} âmes :\n\n${success.map(name => `👥 ${name}`).join("\n")}`;
+      
+      if (failed.length > 0) {
+        msgResult += `\n\n❌ Échec pour ${failed.length} cibles :\n${failed.map(name => `👤 ${name}`).join("\n")}`;
+      }
+      
+      msgResult += "\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢";
+      api.sendMessage(msgResult, event.threadID, event.messageID);
     } else {
-      api.unsendMessage(messageID); // Unsend the message if the response is incorrect
-      return api.sendMessage("Invalid response. Please provide a valid response.", event.threadID);
+      api.unsendMessage(messageID);
+      return api.sendMessage("◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐚𝐜𝐜𝐞𝐩𝐭\n └──────────────────┘\n  \n❌ Réponse invalide.\nAction interrompue dans le néant.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢", event.threadID);
     }
 
-    api.unsendMessage(messageID); // Unsend the message after it has been processed
+    api.unsendMessage(messageID);
   },
 
   onStart: async function ({ event, api, commandName }) {
@@ -107,25 +115,33 @@ module.exports = {
       doc_id: "4499164963466303",
       variables: JSON.stringify({ input: { scale: 3 } })
     };
+    
     const listRequest = JSON.parse(await api.httpPost("https://www.facebook.com/api/graphql/", form)).data.viewer.friending_possibilities.edges;
-    let msg = "";
+    
+    if (listRequest.length === 0) {
+      return api.sendMessage("◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐚𝐜𝐜𝐞𝐩𝐭\n └──────────────────┘\n  \n☯ Aucune demande d'inquisition en attente dans ce monde de cendres.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢", event.threadID, event.messageID);
+    }
+
+    let msg = "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐚𝐜𝐜𝐞𝐩𝐭\n └──────────────────┘\n  \n🔮 Liste des requêtes en attente :\n";
     let i = 0;
+    
     for (const user of listRequest) {
       i++;
-      msg += (`\n${i}. Name: ${user.node.name}`
-        + `\nID: ${user.node.id}`
-        + `\nUrl: ${user.node.url.replace("www.facebook", "fb")}`
-        + `\nTime: ${moment(user.time * 1009).tz("Asia/Manila").format("DD/MM/YYYY HH:mm:ss")}\n`);
+      const formattedTime = moment(user.time * 1000).tz("Africa/Kinshasa").format("DD/MM/YYYY HH:mm:ss");
+      msg += `\n🔢 𝐧𝐮𝐦𝐞́𝐫𝐨 : ${i}\n👤 𝐧𝐚𝐦𝐞 : ${user.node.name}\n🆔 𝐢𝐝 : ${user.node.id}\n⏰ 𝐭𝐞𝐦𝐩𝐬 : ${formattedTime}\n──────────────────`;
     }
-    api.sendMessage(`${msg}\nReply to this message with content: <add | del> <comparison | or "all"> to take action`, event.threadID, (e, info) => {
+    
+    msg += `\n\n👉 Réponds à ce message avec :\n<add | del> <numéro | all>\npour soumettre ces âmes à ta volonté.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢`;
+    
+    api.sendMessage(msg, event.threadID, (e, info) => {
       global.GoatBot.onReply.set(info.messageID, {
         commandName,
         messageID: info.messageID,
         listRequest,
         author: event.senderID,
         unsendTimeout: setTimeout(() => {
-          api.unsendMessage(info.messageID); // Unsend the message after the countdown duration
-        }, this.config.countDown * 1000) // Convert countdown duration to milliseconds
+          api.unsendMessage(info.messageID);
+        }, this.config.countDown * 1000)
       });
     }, event.messageID);
   }
