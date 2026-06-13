@@ -2,7 +2,7 @@ module.exports = {
 	config: {
 		name: "autoUpdateThreadInfo",
 		version: "1.4",
-		author: "NTKhang",
+		credits: "The VOID KUN クン",
 		category: "events"
 	},
 
