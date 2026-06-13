@@ -3,38 +3,38 @@ module.exports = {
 	autoUpdateThreadInfo: {},
 	checkwarn: {
 		text: {
-			warn: "Member %1 has been warned 3 times before and has been banned from the chat box\n- Name: %1\n- Uid: %2\n- To unban, please use the \"%3warn unban <uid>\" command (with uid is the uid of the person you want to unban)",
-			needPermission: "Bot needs administrator permission to kick banned members"
+			warn: "🚨 𝐒𝐂𝐄𝐋𝐋𝐄𝐌𝐄𝐍𝐓 𝐃𝐔 𝐂𝐋𝐀𝐍 🚨\n\n𝐋𝐞 𝐦𝐞𝐦𝐛𝐫𝐞 %1 𝐚 𝐫𝐞𝐜̧𝐮 𝟑 𝐚𝐯𝐞𝐫𝐭𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭𝐬 𝐩𝐫é𝐜é𝐝é𝐬 𝐞𝐭 𝐯𝐢𝐞𝐧𝐭 𝐝'𝐞̂𝐭𝐫𝐞 𝐛𝐚𝐧𝐧𝐢 𝐝e𝐟𝐢𝐧𝐢𝐭𝐢𝐯𝐞𝐦𝐞𝐧𝐭 𝐝𝐞 𝐥'𝐞𝐬𝐩𝐚𝐜𝐞 𝐝𝐞 𝐝𝐢𝐬𝐜𝐮𝐬𝐬𝐢𝐨𝐧.\n\n- 𝐍𝐨𝐦 : %1\n- 𝐔𝐢𝐝 : %2\n- ⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %4\n\n🔮 𝐏𝐨𝐮𝐫 𝐛𝐫𝐢𝐬𝐞𝐫 𝐥𝐞 𝐬𝐜𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭, 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 : \"%3𝐰𝐚𝐫𝐧 𝐮𝐧𝐛𝐚𝐧 <𝐮𝐢𝐝>\"",
+			needPermission: "❌ 𝐌𝐚𝐝𝐚𝐫𝐚 𝐚 𝐛𝐞𝐬𝐨𝐢𝐧 𝐝𝐞𝐬 𝐩𝐞𝐫𝐦𝐢𝐬𝐬𝐢𝐨𝐧𝐬 𝐝'𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫 𝐩𝐨𝐮𝐫 𝐞𝐱𝐜𝐥𝐮𝐫𝐞 𝐥𝐞𝐬 𝐢𝐧𝐭𝐫𝐮𝐬 𝐛𝐚𝐧𝐧𝐢𝐬."
 		}
 	},
 	leave: {
 		text: {
-			session1: "morning",
-			session2: "noon",
-			session3: "afternoon",
-			session4: "evening",
-			leaveType1: "left the group",
-			leaveType2: "was kicked from the group"
+			session1: "𝐦𝐚𝐭𝐢𝐧",
+			session2: "𝐦𝐢𝐝𝐢",
+			session3: "𝐚𝐩𝐫è𝐬-𝐦𝐢𝐝𝐢",
+			session4: "𝐬𝐨𝐢𝐫",
+			leaveType1: "𝐚 𝐪𝐮𝐢𝐭𝐭é 𝐥𝐞 𝐜𝐥𝐚𝐧 𝐞𝐧 𝐬𝐞 𝐝𝐢𝐬𝐬𝐢𝐩𝐚𝐧𝐭",
+			leaveType2: "𝐚 𝐞́𝐭é 𝐞𝐱𝐜𝐥𝐮 𝐩𝐚𝐫 𝐥𝐚 𝐟𝐨𝐫𝐜𝐞 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞"
 		}
 	},
 	logsbot: {
 		text: {
-			title: "====== Bot logs ======",
-			added: "\n✅\nEvent: bot has been added to a new group\n- Added by: %1",
-			kicked: "\n❌\nEvent: bot has been kicked\n- Kicked by: %1",
-			footer: "\n- User ID: %1\n- Group: %2\n- Group ID: %3\n- Time: %4"
+			title: "📜 ====== 𝐑𝐄́𝐏𝐄𝐑𝐓𝐎𝐈𝐑𝐄 𝐃𝐄𝐒 𝐉𝐔𝐓𝐒𝐔𝐒 ======",
+			added: "\n✅\n𝐄́𝐯é𝐧𝐞𝐦𝐞𝐧𝐭 : 𝐋𝐞 𝐛𝐨𝐭 𝐚 𝐞́𝐭é 𝐢𝐧𝐯𝐨𝐪𝐮é 𝐝𝐚𝐧𝐬 𝐮𝐧 𝐧𝐨𝐮𝐯𝐞𝐚𝐮 𝐭𝐞𝐫𝐫𝐢𝐭𝐨𝐢𝐫𝐞\n- 𝐈𝐧𝐯𝐨𝐪𝐮é 𝐩𝐚𝐫 : %1",
+			kicked: "\n❌\n𝐄́𝐯é𝐧𝐞𝐦𝐞𝐧𝐭 : 𝐋𝐞 𝐛𝐨𝐭 𝐚 𝐫𝐞𝐩𝐨𝐮𝐬𝐬é 𝐮𝐧𝐞 𝐭𝐞𝐧𝐭𝐚𝐭𝐢𝐯𝐞 𝐞𝐭 𝐚 𝐞́𝐭é 𝐞𝐱𝐜𝐥𝐮\n- 𝐄𝐱𝐜𝐥𝐮 𝐩𝐚𝐫 : %1",
+			footer: "\n- 𝐈𝐃 𝐔𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫 : %1\n- 𝐂𝐥𝐚𝐧 : %2\n- 𝐈𝐃 𝐂𝐥𝐚𝐧 : %3\n- ⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %4"
 		}
 	},
 	onEvent: {},
 	welcome: {
 		text: {
-			session1: "morning",
-			session2: "noon",
-			session3: "afternoon",
-			session4: "evening",
-			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
-			multiple1: "you",
-			multiple2: "you guys"
+			session1: "𝐦𝐚𝐭𝐢𝐧",
+			session2: "𝐦𝐢𝐝𝐢",
+			session3: "𝐚𝐩𝐫è𝐬-𝐦𝐢𝐝𝐢",
+			session4: "𝐬𝐨𝐢𝐫",
+			welcomeMessage: "👁️‍🗨️ 𝐌𝐞𝐫𝐜𝐢 𝐝𝐞 𝐦'𝐚𝐯𝐨𝐢𝐫 𝐢𝐧𝐯𝐨𝐪𝐮é 𝐚𝐮 𝐜𝐞𝐧𝐭𝐫𝐞 𝐝𝐞 𝐯𝐨𝐭𝐫𝐞 𝐜𝐥𝐚𝐧 !\n\n𝐏𝐫é𝐟𝐢𝐱𝐞 𝐝𝐞 𝐦𝐨𝐧 𝐩𝐫𝐢𝐬𝐦𝐞 : %1\n𝐏𝐨𝐮𝐫 𝐜𝐨𝐧𝐧𝐚𝐢̂𝐭𝐫𝐞 𝐭𝐨𝐮𝐬 𝐦𝐞𝐬 𝐣𝐮𝐭𝐬𝐮𝐬, 𝐞𝐧𝐭𝐫𝐞𝐳 : %1𝐡𝐞𝐥𝐩",
+			multiple1: "𝐭𝐨𝐢",
+			multiple2: "𝐯𝐨𝐮𝐬"
 		}
 	}
 };
