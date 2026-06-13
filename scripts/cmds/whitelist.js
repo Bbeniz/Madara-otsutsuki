@@ -1,50 +1,50 @@
 const { writeFileSync } = require("fs-extra");
 const { config } = global.GoatBot;
 const { client } = global;
+const moment = require("moment-timezone");
 
 module.exports = {
 	config: {
 		name: "whitelist",
 		aliases: ["wlonly", "onlywlst", "onlywhitelist", "wl"],
 		version: "1.5",
-		author: "NTKhang",
+		credits: "The VOID KUN クン",
 		countDown: 5,
 		role: 0,
 		description: {
-			en: "Add, remove, edit whiteListIds role"
+			en: "Gérer la liste blanche du bot"
 		},
 		category: "owner",
 		guide: {
-			en: '   {pn} [add | -a] <uid | @tag>: Add whiteListIds role for user'
-				+ '\n	  {pn} [remove | -r] <uid | @tag>: Remove whiteListIds role of user'
-				+ '\n	  {pn} [list | -l]: List all whiteListIds'
-				+ "   {pn} -m [on | off]: turn on/off the mode only whitelistIds can use bot"
-				+ "\n {pn} -m noti [on | off]: turn on/off the notification when user is not whitelistIds use bot"
+			en: '   {pn} [add | -a] <uid | @tag>'
 		}
 	},
 
 	langs: {
 		en: {
-			added: `╭✦✅ | 𝙰𝚍𝚍𝚎𝚍 %1 𝚞𝚜𝚎𝚛/𝚜\n%2`,
-			alreadyAdmin: `\n╭✦⚠️ | 𝙰𝚕𝚛𝚎𝚊𝚍𝚢 𝚊𝚍𝚍𝚎d %1 𝚞𝚜𝚎𝚛𝚜\n%2`,
-			missingAdd: "⚠️ | 𝙿𝚕𝚎𝚊𝚜𝚎 𝚎𝚗𝚝𝚎𝚛 𝚄𝙸𝙳 𝚝𝚘 𝚊𝚍𝚍 𝚠𝚑𝚒𝚝𝚎𝙻𝚒𝚜𝚝 𝚛𝚘𝚕𝚎",
-			removed: `╭✦✅ | 𝚁𝚎𝚖𝚘𝚟𝚎𝚍 %1 𝚞𝚜𝚎𝚛𝚜\n%2`,
-			notAdmin: `╭✦⚠️ | 𝙳𝚒𝚍𝚗'𝚝 𝚊𝚍𝚍𝚎𝚍 %1 𝚞𝚜𝚎𝚛𝚜\n%2`,
-			missingIdRemove: "⚠️ | 𝙿𝚕𝚎𝚊𝚜𝚎 𝚎𝚗𝚝𝚎𝚛 𝚄𝙸𝙳 𝚝𝚘 𝚛𝚎𝚖𝚘𝚟𝚎 𝚠𝚑𝚒𝚝𝚎𝙻𝚒𝚜𝚝 𝚛𝚘𝚕𝚎",
-			listAdmin: `╭✦✨ | 𝙻𝚒𝚜𝚝 𝚘𝚏 𝚄𝚜𝚎𝚛𝙸𝙳s\n%1\n╰───────────────────⧕`,
-			turnedOn: "✅ | 𝚃𝚞𝚛𝚗𝚎𝚍 𝚘𝚗 𝚝𝚑𝚎 𝚖𝚘𝚍𝚎 𝚘𝚗𝚕𝚢 𝚠𝚑𝚒𝚝𝚎𝚕𝚒𝚜𝚝𝙸𝚍𝚜 𝚌𝚊𝚗 𝚞𝚜𝚎 𝚋𝚘𝚝",
-			turnedOff: "❎ | 𝚃𝚞𝚛𝚗𝚎𝚍 𝚘𝚏𝚏 𝚝𝚑𝚎 𝚖𝚘𝚍𝚎 𝚘𝚗𝚕𝚢 𝚠𝚑𝚒𝚝𝚎𝚕𝚒𝚜𝚝𝙸𝚍𝚜 𝚌𝚊𝚗 𝚞𝚜𝚎 𝚋𝚘𝚝",
-			turnedOnNoti: "✅ | 𝚃𝚞𝚛𝚗𝚎𝚍 𝚘𝚗 𝚝𝚑𝚎 𝚗𝚘𝚝𝚒𝚏𝚒𝚌𝚊𝚝𝚒𝚘𝚗 𝚠𝚑𝚎𝚗 𝚞𝚜𝚎𝚛 𝚒𝚜 𝚗𝚘𝚝 𝚠𝚑𝚒𝚝𝚎𝚕𝚒𝚜𝚝𝙸𝚍𝚜 𝚞𝚜𝚎 𝚋𝚘𝚝",
-			turnedOffNoti: "❎ | 𝚃𝚞𝚛𝚗𝚎𝚍 𝚘𝚏𝚏 𝚝𝚑𝚎 𝚗𝚘𝚝𝚒𝚏𝚒𝚌𝚊𝚝𝚒𝚘𝚗 𝚠𝚑𝚎𝚗 𝚞𝚜𝚎𝚛 𝚒𝚜 𝚗𝚘𝚝 𝚠𝚑𝚒𝚝𝚎𝚕𝚒𝚜𝚝𝙸𝚍𝚜 𝚞𝚜𝚎 𝚋𝚘𝚝"
+			added: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n✅ %1 âme(s) ajoutée(s) :\n%2\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			alreadyAdmin: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n⚠️ Déjà présent (%1 utilisateur) :\n%2\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			missingAdd: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n❌ Spécifie un UID pour l'accès.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			removed: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n✅ %1 âme(s) bannie(s) de la liste :\n%2\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			notAdmin: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n⚠️ Absent de la liste (%1 utilisateur) :\n%2\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %3\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			missingIdRemove: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n❌ Spécifie un UID à destituer.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			listAdmin: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n📜 Membres approuvés :\n%1\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %2\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			turnedOn: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n🔒 Liste blanche activée.\nSeuls les élus peuvent m'invoquer.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			turnedOff: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n🔓 Liste blanche désactivée.\nTous les mortels ont accès au bot.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			turnedOnNoti: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝘩𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n🔔 Notifications activées pour les intrus hors liste blanche.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢",
+			turnedOffNoti: "◤━━━━━━━━━━━━━━━━━━━━◥\n 🛡️ 𝘓'𝘖𝘳𝘥𝘳𝘦 𝘥'𝘜𝘤𝚑𝘪𝘩𝘢 🛡️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐡𝐢𝐭𝐞𝐥𝐢𝐬𝐭\n └──────────────────┘\n  \n🔕 Notifications désactivées pour les intrus hors liste blanche.\n\n⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %1\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶κ𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝒕𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
 		}
 	},
 
 	onStart: async function ({ message, args, usersData, event, getLang, api }) {
 		const permission = global.GoatBot.config.adminBot;
+		const timeKinshasa = moment().tz("Africa/Kinshasa").format("DD/MM/YYYY HH:mm:ss");
+		
 		if (!permission.includes(event.senderID)) {
 			api.sendMessage(args.join(" "), event.threadID, event.messageID);
 			return;
 		}
+		
 		switch (args[0]) {
 			case "add":
 			case "-a":
@@ -70,12 +70,12 @@ module.exports = {
 					const getNames = await Promise.all(uids.map(uid => usersData.getName(uid).then(name => ({ uid, name }))));
 					writeFileSync(global.client.dirConfig, JSON.stringify(config, null, 2));
 					return message.reply(
-						(notAdminIds.length > 0 ? getLang("added", notAdminIds.length, getNames.map(({ uid, name }) => `├‣ 𝚄𝚂𝙴𝚁 𝙽𝙰𝙼𝙴: ${name}\n├‣ 𝚄𝚂𝙴𝚁 𝙸𝙳: ${uid}`).join("\n")) : "")
-						+ (authorIds.length > 0 ? getLang("alreadyAdmin", authorIds.length, authorIds.map(uid => `├‣ 𝚄𝚂𝙴𝚁 𝙸𝙳: ${uid}`).join("\n")) : "")
+						(notAdminIds.length > 0 ? getLang("added", notAdminIds.length, getNames.map(({ uid, name }) => `👤 𝐧𝐚𝐦𝐞 : ${name}\n🆔 𝐮𝐢𝐝 : ${uid}`).join("\n"), timeKinshasa) : "")
+						+ (authorIds.length > 0 ? getLang("alreadyAdmin", authorIds.length, authorIds.map(uid => `🆔 𝐮𝐢𝐝 : ${uid}`).join("\n"), timeKinshasa) : "")
 					);
 				}
 				else
-					return message.reply(getLang("missingIdAdd"));
+					return message.reply(getLang("missingAdd", timeKinshasa));
 			}
 			case "remove":
 			case "rm":
@@ -84,9 +84,11 @@ module.exports = {
 				if (args[1]) {
 					let uids = [];
 					if (Object.keys(event.mentions).length > 0)
-						uids = Object.keys(event.mentions)[0];
+						uids = Object.keys(event.mentions);
+					else if (event.messageReply)
+						uids.push(event.messageReply.senderID);
 					else
-						uids = args.filter(arg => !isNaN(arg)) || event.messageReply.senderID;
+						uids = args.filter(arg => !isNaN(arg));
 					const notAdminIds = [];
 					const authorIds = [];
 					for (const uid of uids) {
@@ -100,17 +102,17 @@ module.exports = {
 					const getNames = await Promise.all(authorIds.map(uid => usersData.getName(uid).then(name => ({ uid, name }))));
 					writeFileSync(global.client.dirConfig, JSON.stringify(config, null, 2));
 					return message.reply(
-						(authorIds.length > 0 ? getLang("removed", authorIds.length, getNames.map(({ uid, name }) => `├‣ 𝚄𝚂𝙴𝚁 𝙽𝙰𝙼𝙴: ${name}\n├‣ 𝚄𝚂𝙴𝚁 𝙸𝙳: ${uid}`).join("\n")) : "")
-						+ (notAdminIds.length > 0 ? getLang("notAdmin", notAdminIds.length, notAdminIds.map(uid => `├‣ 𝚄𝚂𝙴𝚁 𝙸𝙳: ${uid}`).join("\n├\n")) : "")
+						(authorIds.length > 0 ? getLang("removed", authorIds.length, getNames.map(({ uid, name }) => `👤 𝐧𝐚𝐦𝐞 : ${name}\n🆔 𝐮𝐢𝐝 : ${uid}`).join("\n"), timeKinshasa) : "")
+						+ (notAdminIds.length > 0 ? getLang("notAdmin", notAdminIds.length, notAdminIds.map(uid => `🆔 𝐮𝐢𝐝 : ${uid}`).join("\n"), timeKinshasa) : "")
 					);
 				}
 				else
-					return message.reply(getLang("missingIdRemove"));
+					return message.reply(getLang("missingIdRemove", timeKinshasa));
 			}
 			case "list":
 			case "-l": {
 				const getNames = await Promise.all(config.whiteListMode.whiteListIds.map(uid => usersData.getName(uid).then(name => ({ uid, name }))));
-				return message.reply(getLang("listAdmin", getNames.map(({ uid, name }) => `├‣ 𝚄𝚂𝙴𝚁 𝙽𝙰𝙼𝙴: ${name}\n├‣ 𝚄𝚂𝙴𝚁 𝙸𝙳: ${uid}`).join("\n")));
+				return message.reply(getLang("listAdmin", getNames.map(({ uid, name }) => `👤 𝐧𝐚𝐦𝐞 : ${name}\n🆔 𝐮𝐢𝐝 : ${uid}\n──────────────────`).join("\n"), timeKinshasa));
 			}
 			case "m":
 			case "mode":
@@ -130,15 +132,15 @@ module.exports = {
 						value = false;
 					if (isSetNoti) {
 						config.hideNotiMessage.whiteListMode = !value;
-						message.reply(getLang(value ? "turnedOnNoti" : "turnedOffNoti"));
+						message.reply(getLang(value ? "turnedOnNoti" : "turnedOffNoti", timeKinshasa));
 					}
 					else {
 						config.whiteListMode.enable = value;
-						message.reply(getLang(value ? "turnedOn" : "turnedOff"));
+						message.reply(getLang(value ? "turnedOn" : "turnedOff", timeKinshasa));
 					}
 
 					writeFileSync(client.dirConfig, JSON.stringify(config, null, 2));
-		}
+			}
 			default:
 		}
 	}
