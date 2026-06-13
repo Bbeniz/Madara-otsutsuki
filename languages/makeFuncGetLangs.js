@@ -50,7 +50,7 @@ function getText(head, key, ...args) {
 		langObj = global.language;
 	}
 	if (!langObj[head]?.hasOwnProperty(key))
-		return `Can't find text: "${head}.${key}"`;
+		return `❌ Archive introuvable : "${head}.${key}"`;
 	let text = langObj[head][key];
 	for (let i = args.length - 1; i >= 0; i--)
 		text = text.replace(new RegExp(`%${i + 1}`, 'g'), args[i]);
