@@ -1,152 +1,187 @@
-const { getTime, drive } = global.utils;
-if (!global.temp.welcomeEvent)
-global.temp.welcomeEvent = {};
+const axios = require("axios");
+const fs = require("fs-extra");
+const path = require("path");
+const { getTime } = global.utils;
 
 module.exports = {
-config: {
-name: "welcome",
-version: "1.7",
-author: "𝕿𝖍𝖊 𝖁𝖔𝖎𝖉 𝕶𝖚𝖓 クン",
-category: "events"
-},
+	config: {
+		name: "welcome",
+		version: "1.5",
+		credits: "The VOID KUN クン",
+		category: "events"
+	},
 
-langs: {
-	en: {
-		session1: "𝐦𝐚𝐭𝐢𝐧",
-		session2: "𝐦𝐢𝐝𝐢",
-		session3: "𝐚𝐩𝐫𝐞̀𝐬-𝐦𝐢𝐝𝐢",
-		session4: "𝐬𝐨𝐢𝐫𝐞́𝐞",
+	langs: {
+		vi: {
+			welcomeMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐞𝐥𝐜𝐨𝐦𝐞\n └──────────────────┘\n  \n☯ Bienvenue %1 dans le groupe: %2\n⚔️ Tu es le %3e membre de ce monde de cendres.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
+		},
+		en: {
+			welcomeMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐞𝐥𝐜𝐨𝐦𝐞\n └──────────────────┘\n  \n☯ Welcome %1 to the group: %2\n⚔️ You are the %3th member of this world of ashes.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
+		}
+	},
 
-		welcomeMessage: `╔════『 👁️ 𝐌𝐀𝐃𝐀𝐑𝐀 𝐎𝐓𝐒𝐔𝐓𝐒𝐔𝐊𝐈 👁️ 』════╗
-
-𝐉𝐞 𝐬𝐮𝐢𝐬 𝐌𝐚𝐝𝐚𝐫𝐚 𝐎𝐭𝐬𝐮𝐭𝐬𝐮𝐤𝐢.
-
-𝐌𝐞𝐫𝐜𝐢 𝐝'𝐚𝐯𝐨𝐢𝐫 𝐢𝐧𝐯𝐨𝐪𝐮𝐞́ 𝐦𝐨𝐧 𝐩𝐨𝐮𝐯𝐨𝐢𝐫 𝐝𝐚𝐧𝐬 𝐜𝐞 𝐠𝐫𝐨𝐮𝐩𝐞.
-
-⚫ 𝐏𝐫𝐞́𝐟𝐢𝐱𝐞 : %1
-⚫ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬 : %1help
-
-👁️ 𝐐𝐮𝐞 𝐥𝐞 𝐑𝐢𝐧𝐧𝐞𝐠𝐚𝐧 𝐠𝐮𝐢𝐝𝐞 𝐯𝐨𝐭𝐫𝐞 𝐝𝐞𝐬𝐭𝐢𝐧.
-
-╚══════════════════════════════╝`,
-
-		multiple1: "𝐭𝐨𝐢",
-		multiple2: "𝐯𝐨𝐮𝐬",
-
-		defaultWelcomeMessage: `╔════『 🌑 𝐍𝐎𝐔𝐕𝐄𝐋 𝐀𝐑𝐑𝐈𝐕𝐀𝐍𝐓 🌑 』════╗
-
-👤 𝐍𝐢𝐧𝐣𝐚 : {userName}
-
-🏯 𝐆𝐫𝐨𝐮𝐩𝐞 : {boxName}
-
-⚔️ 𝐋𝐞 𝐜𝐥𝐚𝐧 𝐔𝐜𝐡𝐢𝐡𝐚 𝐭'𝐚𝐜𝐜𝐮𝐞𝐢𝐥𝐥𝐞.
-
-🌙 𝐏𝐚𝐬𝐬𝐞 𝐮𝐧𝐞 𝐞𝐱𝐜𝐞𝐥𝐥𝐞𝐧𝐭𝐞 {session}.
-
-👁️ 𝐌𝐀𝐃𝐀𝐑𝐀 𝐎𝐓𝐒𝐔𝐓𝐒𝐔𝐊𝐈
-
-╚══════════════════════════════╝`
-}
-},
-
-onStart: async ({ threadsData, message, event, api, getLang }) => {
-	if (event.logMessageType == "log:subscribe")
-		return async function () {
-			const hours = getTime("HH");
+	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
+		// 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗖𝗢𝗥𝗘
+		if (event.logMessageType == "log:subscribe") return async function () {
+			
 			const { threadID } = event;
-			const { nickNameBot } = global.GoatBot.config;
-			const prefix = global.utils.getPrefix(threadID);
-			const dataAddedParticipants = event.logMessageData.addedParticipants;
+			const threadData = await threadsData.get(threadID);
 
-			if (dataAddedParticipants.some((item) => item.userFbId == api.getCurrentUserID())) {
-				if (nickNameBot)
-					api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
-				return message.send(getLang("welcomeMessage", prefix));
-			}
+			if (!threadData.settings.sendWelcomeMessage) 
+				return;
 
-			if (!global.temp.welcomeEvent[threadID])
-				global.temp.welcomeEvent[threadID] = {
-					joinTimeout: null,
-					dataAddedParticipants: []
-				};
+			const { addedParticipants } = event.logMessageData;
 
-			global.temp.welcomeEvent[threadID].dataAddedParticipants.push(...dataAddedParticipants);
+			// ⚔️ Ignorer si c'est le bot lui-même qui rejoint
+			if (addedParticipants.some(item => item.userFbId == api.getCurrentUserID())) 
+				return;
 
-			clearTimeout(global.temp.welcomeEvent[threadID].joinTimeout);
+			const threadName = threadData.threadName;
+			const memberCount = (await api.getThreadInfo(threadID)).participantIDs.length;
 
-			global.temp.welcomeEvent[threadID].joinTimeout = setTimeout(async function () {
-				const threadData = await threadsData.get(threadID);
-				if (threadData.settings.sendWelcomeMessage == false)
-					return;
+			for (const participant of addedParticipants) {
+				const userID = participant.userFbId;
+				const userName = await usersData.getName(userID);
 
-				const dataAddedParticipants = global.temp.welcomeEvent[threadID].dataAddedParticipants;
-				const dataBanned = threadData.data.banned_ban || [];
-				const threadName = threadData.threadName;
-				const userName = [],
-					mentions = [];
-				let multiple = false;
+				// 🔮 Configuration du message texte Madara
+				const msgText = getLang("welcomeMessage", userName, threadName, memberCount);
 
-				if (dataAddedParticipants.length > 1)
-					multiple = true;
+				// 🩸 Génération de l'image (Option 1 : API Canvas Externe)
+				const cachePath = path.join(__dirname, "cache", `welcome_${userID}.png`);
+				fs.ensureDirSync(path.dirname(cachePath));
 
-				for (const user of dataAddedParticipants) {
-					if (dataBanned.some((item) => item.id == user.userFbId))
-						continue;
+				// Paramètres de la carte (Thème sombre adapté à Madara)
+				const title = encodeURIComponent("WELCOME");
+				const description = encodeURIComponent(`Member #${memberCount}`);
+				const name = encodeURIComponent(userName);
+				const avatar = `https://graph.facebook.com/${userID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
 
-					userName.push(user.fullName);
-					mentions.push({
-						tag: user.fullName,
-						id: user.userFbId
+				// const axios = require("axios");
+const fs = require("fs-extra");
+const path = require("path");
+const { getTime } = global.utils;
+
+module.exports = {
+	config: {
+		name: "welcome",
+		version: "1.5",
+		credits: "The VOID KUN クン",
+		category: "events"
+	},
+
+	langs: {
+		vi: {
+			welcomeMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐞𝐥𝐜𝐨𝐦𝐞\n └──────────────────┘\n  \n☯ Bienvenue %1 dans le groupe: %2\n⚔️ Tu es le %3e membre de ce monde de cendres.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
+		},
+		en: {
+			welcomeMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐰𝐞𝐥𝐜𝐨𝐦𝐞\n └──────────────────┘\n  \n☯ Welcome %1 to the group: %2\n⚔️ You are the %3th member of this world of ashes.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
+		}
+	},
+
+	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
+		// 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗖𝗢𝗥𝗘
+		if (event.logMessageType == "log:subscribe") return async function () {
+			
+			const { threadID } = event;
+			const threadData = await threadsData.get(threadID);
+
+			if (!threadData.settings.sendWelcomeMessage) 
+				return;
+
+			const { addedParticipants } = event.logMessageData;
+
+			// ⚔️ Ignorer si c'est le bot lui-même qui rejoint
+			if (addedParticipants.some(item => item.userFbId == api.getCurrentUserID())) 
+				return;
+
+			const threadName = threadData.threadName;
+			const memberCount = (await api.getThreadInfo(threadID)).participantIDs.length;
+
+			for (const participant of addedParticipants) {
+				const userID = participant.userFbId;
+				const userName = await usersData.getName(userID);
+
+				// 🔮 Configuration du message texte Madara
+				const msgText = getLang("welcomeMessage", userName, threadName, memberCount);
+
+				// 🩸 Génération de l'image (Option 1 : API Canvas Externe)
+				const cachePath = path.join(__dirname, "cache", `welcome_${userID}.png`);
+				fs.ensureDirSync(path.dirname(cachePath));
+
+				// Paramètres de la carte (Thème sombre adapté à Madara)
+				const title = encodeURIComponent("WELCOME");
+				const description = encodeURIComponent(`Member #${memberCount}`);
+				const name = encodeURIComponent(userName);
+				const avatar = `https://graph.facebook.com/${userID}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
+
+				// URL de l'API de génération automatique de cartes graphiques
+				const canvasUrl = `https://api.popcat.xyz/welcomecard?background=https://i.imgur.com/7gK5Yh4.jpg&text1=${title}&text2=${name}&text3=${description}&avatar=${encodeURIComponent(avatar)}`;
+
+				const form = { body: msgText };
+
+				try {
+					const response = await axios({
+						method: "GET",
+						url: canvasUrl,
+						responseType: "stream"
 					});
+
+					// Sauvegarde temporaire de l'image générée
+					const writer = fs.createWriteStream(cachePath);
+					response.data.pipe(writer);
+
+					await new Promise((resolve, reject) => {
+						writer.on("finish", resolve);
+						writer.on("error", reject);
+					});
+
+					// Ajout de la photo au formulaire final
+					form.attachment = fs.createReadStream(cachePath);
+				} catch (error) {
+					console.error("👁️‍🗨️ Erreur lors de la génération de la carte bienvenue:", error);
+					// Si l'API échoue, le bot enverra quand même le texte pour ne pas bugger
 				}
 
-				if (userName.length == 0)
-					return;
-
-				let { welcomeMessage = getLang("defaultWelcomeMessage") } =
-					threadData.data;
-
-				const form = {
-					mentions: welcomeMessage.match(/\{userNameTag\}/g) ? mentions : null
-				};
-
-				welcomeMessage = welcomeMessage
-					.replace(/\{userName\}|\{userNameTag\}/g, userName.join(", "))
-					.replace(/\{boxName\}|\{threadName\}/g, threadName)
-					.replace(
-						/\{multiple\}/g,
-						multiple ? getLang("multiple2") : getLang("multiple1")
-					)
-					.replace(
-						/\{session\}/g,
-						hours <= 10
-							? getLang("session1")
-							: hours <= 12
-							? getLang("session2")
-							: hours <= 18
-							? getLang("session3")
-							: getLang("session4")
-					);
-
-				form.body = welcomeMessage;
-
-				if (threadData.data.welcomeAttachment) {
-					const files = threadData.data.welcomeAttachment;
-
-					const attachments = files.reduce((acc, file) => {
-						acc.push(drive.getFile(file, "stream"));
-						return acc;
-					}, []);
-
-					form.attachment = (await Promise.allSettled(attachments))
-						.filter(({ status }) => status == "fulfilled")
-						.map(({ value }) => value);
-				}
-
-				message.send(form);
-				delete global.temp.welcomeEvent[threadID];
-			}, 1500);
+				// 👁️‍🗨️ Envoi final sous l'illusion du Tsukuyomi
+				await api.sendMessage(form, threadID, () => {
+					if (fs.existsSync(cachePath)) fs.unlinkSync(cachePath);
+				});
+			}
 		};
-}
+	}
+}; de l'API de génération automatique de cartes graphiques
+				const canvasUrl = `https://api.popcat.xyz/welcomecard?background=https://i.imgur.com/7gK5Yh4.jpg&text1=${title}&text2=${name}&text3=${description}&avatar=${encodeURIComponent(avatar)}`;
 
+				const form = { body: msgText };
+
+				try {
+					const response = await axios({
+						method: "GET",
+						url: canvasUrl,
+						responseType: "stream"
+					});
+
+					
+					const writer = fs.createWriteStream(cachePath);
+					response.data.pipe(writer);
+
+					await new Promise((resolve, reject) => {
+						writer.on("finish", resolve);
+						writer.on("error", reject);
+					});
+
+					
+					form.attachment = fs.createReadStream(cachePath);
+				} catch (error) {
+					console.error("👁️‍🗨️ Erreur lors de la génération de la carte bienvenue:", error);
+					
+				}
+
+				
+				await api.sendMessage(form, threadID, () => {
+					if (fs.existsSync(cachePath)) fs.unlinkSync(cachePath);
+				});
+			}
+		};
+	}
 };
