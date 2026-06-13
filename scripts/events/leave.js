@@ -4,7 +4,7 @@ module.exports = {
 	config: {
 		name: "leave",
 		version: "1.4",
-		author: "𝕿𝖍𝖊 𝖁𝖔𝖎𝖉 𝕶𝖚𝖓 クン",
+		credits: "The VOID KUN クン",
 		category: "events"
 	},
 
@@ -14,9 +14,9 @@ module.exports = {
 			session2: "midi",
 			session3: "après-midi",
 			session4: "soir",
-			leaveType1: "a quitté volontairement",
-			leaveType2: "a été expulsé de",
-			defaultLeaveMessage: "☯ {userName} {type} le groupe"
+			leaveType1: "𝐚 𝐪𝐮𝐢𝐭𝐭𝐞́ 𝐯𝐨𝐥𝐨𝐧𝐭𝐚𝐢𝐫𝐞𝐦𝐞𝐧𝐭",
+			leaveType2: "𝐚 𝐞́𝐭𝐞́ 𝐞𝐱𝐩𝐮𝐥𝐬𝐞́ 𝐝𝐞",
+			defaultLeaveMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐥𝐞𝐚𝐯𝐞\n └──────────────────┘\n  \n  ☯ {userName} {type} le groupe {threadName}.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
 		},
 
 		en: {
@@ -24,15 +24,15 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			leaveType1: "has left",
-			leaveType2: "was kicked from",
-			defaultLeaveMessage: "☯ {userName} {type} the group"
+			leaveType1: "𝐡𝐚𝐬 𝐥𝐞𝐟𝐭",
+			leaveType2: "𝐰𝐚𝐬 𝐤𝐢𝐜𝐤𝐞𝐝 𝐟𝐫𝐨𝐦",
+			defaultLeaveMessage: "◤━━━━━━━━━━━━━━━━━━━━◥\n 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗢𝗧𝗦𝗨𝗧𝗦𝗨𝗞𝗜 👁️‍🗨️\n◣━━━━━━━━━━━━━━━━━━━━◢\n ┌──────────────────┐\n │ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 : 𝐥𝐞𝐚𝐯𝐞\n └──────────────────┘\n  \n  ☯ {userName} {type} the group {threadName}.\n\n◤━━━━━━━━━━━━━━━━━━━━◥\n 🔮 𝘛𝘴𝘶𝘬𝘶𝘺𝘰𝘮𝘪 𝘐𝘯𝘧𝘪𝘯𝘪 𝘢𝘤𝘵𝘪𝘧\n◣━━━━━━━━━━━━━━━━━━━━◢"
 		}
 	},
 
 	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
 
-		// 🩸 𝐌𝐀𝐃𝐀𝐑𝐀 𝐋𝐄𝐀𝐕𝐄 𝐂𝐎𝐑𝐄
+		// 👁️‍🗨️ 𝗠𝗔𝗗𝗔𝗥𝗔 𝗟𝗘𝗔𝗩𝗘 𝗖𝗢𝗥𝗘
 		if (event.logMessageType == "log:unsubscribe")
 			return async function () {
 
@@ -44,7 +44,7 @@ module.exports = {
 
 				const { leftParticipantFbId } = event.logMessageData;
 
-				// ⚔️ ignorer si c’est le bot
+				// ⚔️ Ignorer si c’est le bot
 				if (leftParticipantFbId == api.getCurrentUserID())
 					return;
 
@@ -52,7 +52,7 @@ module.exports = {
 				const threadName = threadData.threadName;
 				const userName = await usersData.getName(leftParticipantFbId);
 
-				// ☯ variables système
+				// 🔮 Variables système
 				let { leaveMessage = getLang("defaultLeaveMessage") } = threadData.data;
 
 				const form = {
@@ -62,7 +62,7 @@ module.exports = {
 					}] : null
 				};
 
-				// 🩸 transformation Madara du message
+				// 🩸 Transformation Madara du message
 				leaveMessage = leaveMessage
 					.replace(/\{userName\}|\{userNameTag\}/g, userName)
 					.replace(/\{type\}/g,
@@ -84,7 +84,7 @@ module.exports = {
 
 				form.body = leaveMessage;
 
-				// ⚔️ mention utilisateur
+				// ⚔️ Mention utilisateur
 				if (leaveMessage.includes("{userNameTag}")) {
 					form.mentions = [{
 						id: leftParticipantFbId,
@@ -92,7 +92,7 @@ module.exports = {
 					}];
 				}
 
-				// 🩸 pièces jointes (drive system)
+				// 🔮 Pièces jointes (drive system)
 				if (threadData.data.leaveAttachment) {
 					const files = threadData.data.leaveAttachment;
 
@@ -106,7 +106,7 @@ module.exports = {
 						.map(({ value }) => value);
 				}
 
-				// ☯ envoi final
+				// 👁️‍🗨️ Envoi final sous l'illusion du Tsukuyomi
 				message.send(form);
 			};
 	}
