@@ -1,40 +1,40 @@
 module.exports = {
-	// Vous pouvez personnaliser la langue ici ou directement dans les fichiers de commandes
+	// 𝐀𝐮𝐭𝐡𝐨𝐫: 𝐌𝐚𝐝𝐚𝐫𝐚 | 𝐕𝐨𝐮𝐬 𝐩𝐨𝐮𝐯𝐞𝐳 𝐩𝐞𝐫𝐬𝐨𝐧𝐧𝐚𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐥𝐚𝐧𝐠𝐮𝐞 𝐢𝐜𝐢 𝐨𝐮 𝐝𝐢𝐫𝐞𝐜𝐭𝐞𝐦𝐞𝐧𝐭 𝐝𝐚𝐧𝐬 𝐥𝐞𝐬 𝐟𝐢𝐜𝐡𝐢𝐞𝐫𝐬 𝐝𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬
 	autoUpdateThreadInfo: {},
 	checkwarn: {
 		text: {
-			warn: "Le membre %1 a déjà reçu 3 avertissements et a été banni du groupe\n- Nom : %1\n- Uid : %2\n- Pour débannir, veuillez utiliser la commande \"%3warn unban <uid>\" (où uid est l'identifiant de la personne à débannir)",
-			needPermission: "Le bot a besoin des droits d'administrateur pour exclure les membres bannis"
+			warn: "🚨 𝐒𝐂𝐄𝐋𝐋𝐄𝐌𝐄𝐍𝐓 𝐃𝐔 𝐂𝐋𝐀𝐍 🚨\n\n𝐋𝐞 𝐦𝐞𝐦𝐛𝐫𝐞 %1 𝐚 𝐝𝐞́𝐣𝐚̀ 𝐫𝐞𝐜̧𝐮 𝟑 𝐚𝐯𝐞𝐫𝐭𝐢𝐬𝐬𝐞𝐦𝐞𝐧𝐭𝐬 𝐞𝐭 𝐚 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐞́𝐟𝐢𝐧𝐢𝐭𝐢𝐯𝐞𝐦𝐞𝐧𝐭 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞.\n- 𝐍𝐨𝐦 : %1\n- 𝐔𝐢𝐝 : %2\n- ⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %4\n\n🔮 𝐏𝐨𝐮𝐫 𝐛𝐫𝐢𝐬𝐞𝐫 𝐥𝐞 𝐬𝐜𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭, 𝐯𝐞𝐮𝐢𝐥𝐥𝐞𝐳 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 \"%3𝐰𝐚𝐫𝐧 𝐮𝐧𝐛𝐚𝐧 <𝐮𝐢𝐝>\"",
+			needPermission: "❌ 𝐌𝐚𝐝𝐚𝐫𝐚 𝐚 𝐛𝐞𝐬𝐨𝐢𝐧 𝐝𝐞𝐬 𝐝𝐫𝐨𝐢𝐭𝐬 𝐝'𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫 𝐩𝐨𝐮𝐫 𝐞𝐱𝐜𝐥𝐮𝐫𝐞 𝐥𝐞𝐬 𝐦𝐞𝐦𝐛𝐫𝐞𝐬 𝐛𝐚𝐧𝐧𝐢𝐬."
 		}
 	},
 	leave: {
 		text: {
-			session1: "matin",
-			session2: "midi",
-			session3: "après-midi",
-			session4: "soir",
-			leaveType1: "a quitté le groupe",
-			leaveType2: "a été expulsé du groupe"
+			session1: "𝐦𝐚𝐭𝐢𝐧",
+			session2: "𝐦𝐢𝐝𝐢",
+			session3: "𝐚𝐩𝐫𝐞̀𝐬-𝐦𝐢𝐝𝐢",
+			session4: "𝐬𝐨𝐢𝐫",
+			leaveType1: "𝐚 𝐪𝐮𝐢𝐭𝐭𝐞́ 𝐥𝐞 𝐜𝐥𝐚𝐧 𝐞𝐧 𝐬𝐞 𝐝𝐢𝐬𝐬𝐢𝐩𝐚𝐧𝐭",
+			leaveType2: "𝐚 𝐞́𝐭𝐞́ 𝐞𝐱𝐩𝐮𝐥𝐬𝐞́ 𝐩𝐚𝐫 𝐥𝐚 𝐟𝐨𝐫𝐜𝐞 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞"
 		}
 	},
 	logsbot: {
 		text: {
-			title: "====== Logs du bot ======",
-			added: "\n✅\nÉvénement : le bot a été ajouté à un nouveau groupe\n- Ajouté par : %1",
-			kicked: "\n❌\nÉvénement : le bot a été expulsé\n- Expulsé par : %1",
-			footer: "\n- ID Utilisateur : %1\n- Groupe : %2\n- ID Groupe : %3\n- Heure : %4"
+			title: "👁️‍🗨️ ====== 𝐑𝐄́𝐏𝐄𝐑𝐓𝐎𝐈𝐑𝐄 𝐃𝐄𝐒 𝐎𝐑𝐃𝐑𝐄𝐒 ======",
+			added: "\n✅\n𝐄́𝐯𝐞́𝐧𝐞𝐦𝐞𝐧𝐭 : 𝐥𝐞 𝐛𝐨𝐭 𝐚 𝐞́𝐭𝐞́ 𝐢𝐧𝐯𝐨𝐪𝐮𝐞́ 𝐝𝐚𝐧𝐬 𝐮𝐧 𝐧𝐨𝐮𝐯𝐞𝐚𝐮 𝐭𝐞𝐫𝐫𝐢𝐭𝐨𝐢𝐫𝐞\n- 𝐀𝐣𝐨𝐮𝐭𝐞́ 𝐩𝐚𝐫 : %1",
+			kicked: "\n❌\n𝐄́𝐯--𝐞́𝐧𝐞𝐦𝐞𝐧𝐭 : 𝐥𝐞 𝐛𝐨𝐭 𝐚 𝐬𝐮𝐛𝐢 𝐮𝐧𝐞 𝐞𝐱𝐜𝐥𝐮𝐬𝐢𝐨𝐧\n- 𝐄𝐱𝐩𝐮𝐥𝐬𝐞́ 𝐩𝐚𝐫 : %1",
+			footer: "\n- 𝐈𝐃 𝐔𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫 : %1\n- 𝐆𝐫𝐨𝐮𝐩𝐞 : %2\n- 𝐈𝐃 𝐆𝐫𝐨𝐮𝐩𝐞 : %3\n- ⏰ 𝐤𝐢𝐧𝐬𝐡𝐚𝐬𝐚 : %4"
 		}
 	},
 	onEvent: {},
 	welcome: {
 		text: {
-			session1: "matin",
-			session2: "midi",
-			session3: "après-midi",
-			session4: "soir",
-			welcomeMessage: "Merci de m'avoir invité dans le groupe !\nPréfixe du bot : %1\nPour voir la liste des commandes, saisissez : %1help",
-			multiple1: "toi",
-			multiple2: "vous tous"
+			session1: "𝐦𝐚𝐭𝐢𝐧",
+			session2: "𝐦𝐢𝐝𝐢",
+			session3: "𝐚𝐩𝐫𝐞̀𝐬-𝐦𝐢𝐝𝐢",
+			session4: "𝐬𝐨𝐢𝐫",
+			welcomeMessage: "🔮 𝐌𝐞𝐫𝐜𝐢 𝐝𝐞 𝐦'𝐚𝐯𝐨𝐢𝐫 𝐢𝐧𝐯𝐨𝐪𝐮𝐞́ 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 !\n𝐏𝐫𝐞́𝐟𝐢𝐱𝐞 𝐝𝐮 𝐛𝐨𝐭 : %1\n𝐏𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐚 𝐥𝐢𝐬𝐭𝐞 𝐝𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬, 𝐬𝐚𝐢𝐬𝐢𝐬𝐬𝐞𝐳 : %1𝐡𝐞𝐥𝐩",
+			multiple1: "𝐭𝐨𝐢",
+			multiple2: "𝐯𝐨𝐮𝐬 𝐭𝐨𝐮𝐬"
 		}
 	}
 };
